@@ -5,6 +5,52 @@
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 2em; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Grosor de la fuente */
+    margin-bottom: 10px; /* Margen inferior */
+  }
+  
+  /* Estilos para h2 */
+  h2 {
+    font-size: 1.5em;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  /* Estilos para h3 */
+  h3 {
+    font-size: 1.2em;
+    color: #777;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  /* Estilos para h4 */
+  h4 {
+    font-size: 1.1em;
+    color: #888;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  /* Estilos para h5 */
+  h5 {
+    font-size: 1em;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  
+  /* Estilos para h6 */
+  h6 {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 2px;
+  }
+
+
 .container{
     width: 100%;
     min-height: 100vh;
@@ -14,12 +60,68 @@
     padding: 10px 8%;
 }
 
+.contenedor-qsomos{
+    width: 100%;
+    min-height: 100vh;
+    background-color: aliceblue;
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+
+.contenedor-tarjeta{
+    display: flex;
+    padding: 1rem;
+}
+
+.contenedor-tarjeta img{
+    width: 35rem;
+    border-style: solid;
+    border-color: orange;
+    border-width: .3rem;
+}
+
+.contenedor-estamos{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 3rem;
+   
+}
+
+.contenedor-estamos h1{
+    color: #F88E12;
+    padding-bottom: 2rem;
+}
+
+.contenedor-estamos iframe{
+    border-bottom: #F88E12;
+    border-style: initial;
+    border-width: 2rem;
+}
+
+.tarjeta{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 3rem;
+   
+}
+
+.tarjeta h1{
+   padding-top: 1rem;
+}
+
 nav{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
+    margin-bottom: 5rem;
+    
 }
 
 .logo{
@@ -40,7 +142,7 @@ nav ul li{
 }
 
 nav ul li a{
-    color: #fff;
+    color: #0c1774;
     text-decoration: none;
 }
 

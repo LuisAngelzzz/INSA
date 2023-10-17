@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-//angel// 
 <body>
     <div class="container" data-aos="fade-right">
         <nav>
