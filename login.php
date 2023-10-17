@@ -1,4 +1,4 @@
- <?php
+<?php
 include('conex.php');
 
 if(isset($_POST['login'])) {
@@ -16,11 +16,11 @@ if(isset($_POST['login'])) {
         echo "Credenciales incorrectas. Inténtalo de nuevo.";
     }
 }
-?>//angel// 
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inicio de aSesión</title>
+    <title>Inicio de Sesión</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -54,11 +54,11 @@ if(isset($_POST['login'])) {
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" required><br>
 
-    <div id="check">
-    <input type="checkbox" id="miCheckbox" name="miCheckbox" value="valor">
 
-    <p> <label for="miCheckbox">Recuérdameㅤㅤㅤㅤㅤ</label></p> 
-                <a href="olvidar_contrasena.php">¿Olvidaste tu contraseña?</a>
+<div class="horizontal-center">
+  <input type="checkbox" id="recuerdame">
+  <label for="recuerdame">Recuérdameㅤㅤㅤㅤㅤㅤ</label>
+  <a class="black-link" href="pagina_de_olvidar_contrasena.html">Olvidaste tu contraseña</a>
 </div>
 
 
@@ -70,11 +70,17 @@ if(isset($_POST['login'])) {
 
 <div id="centrar">
 <label>O inicia sesion con:</label>  
-    <p></p>
 
-<input type="submit" name="login" value="Facebook">
-<input type="submit" name="login" value="Linked In">
-<input type="submit" name="login" value="Google">      
+
+<a href="fb.com">
+  <img src="img/fb.png" width="50" height="50">
+</a>    
+<a href="fb.com">
+  <img src="img/link.png" width="50" height="50">
+</a>   
+<a href="https://fb.com"> 
+  <img src="img/google.png" width="50" height="50">
+ </a>    
 </form>
 </div>
 
