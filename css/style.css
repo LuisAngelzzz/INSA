@@ -1,0 +1,165 @@
+body {
+   font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #002587; /* Color de texto azul rey */
+}
+
+#contenedorprimario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 636px;
+    width: 90%; /* Ancho total de la ventana */
+    padding: 20px;
+    background-color: #EFEFEF;
+}
+
+/* Codigo Pauuu */
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(76, 109, 201, 0.65),rgba(175, 173, 189, 0.65));
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.logo{
+    width: 180px;
+    cursor: pointer;
+}
+
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background: #0c1774;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn img{
+    width: 20px;
+    margin-right: 10px;
+}
+/* Apartado Pauuu */
+
+#izquierdo {
+    flex: 1; /* Toma el 50% del ancho del contenedor principal */
+    padding: 20px;
+}
+
+#logoINSA {
+    max-width: 100%;
+    height: auto;
+}
+
+#derecho {
+    flex: 1; /* Toma el 50% del ancho del contenedor principal */
+    padding: 20px;
+}
+
+#logincontenedor {
+    height: 100%;
+    background-color: #EFEFEF;
+    display: flex;
+
+    flex-direction: column;
+}
+.logoI {
+    height: 40px;
+    width: 20%;
+ 
+}
+
+#centrar1 {
+    text-align: center;
+    margin:0px; /* Agrega un margen para desplazar los elementos desde el centro */
+}
+
+#centrar {
+    text-align: center;
+    margin: 50px; /* Agrega un margen para desplazar los elementos desde el centro */
+}
+
+
+#check {
+    display: flex; /* Utiliza flexbox para alinear elementos en la misma fila */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #0073e6;
+}
+
+input[type="submit"] {
+    background-color: #E69600;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #005bad;
+}
+
+p {
+    margin-top: 20px;
+}
+
+/* Puedes agregar más estilos CSS según tus preferencias. */
