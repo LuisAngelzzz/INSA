@@ -12,9 +12,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 636px;
+    height: 673px;
     width: 90%; /* Ancho total de la ventana */
-    padding: 20px;
+    padding: 0px;
     background-color: #EFEFEF;
 }
 
@@ -78,8 +78,8 @@ nav ul li a{
 /* Apartado Pauuu */
 
 #izquierdo {
-    flex: 1; /* Toma el 50% del ancho del contenedor principal */
-    padding: 20px;
+    flex: 1; 
+    padding: 0px;
 }
 
 #logoINSA {
@@ -88,8 +88,8 @@ nav ul li a{
 }
 
 #derecho {
-    flex: 1; /* Toma el 50% del ancho del contenedor principal */
-    padding: 20px;
+    flex: 1; 
+    padding: 80px;
 }
 
 #logincontenedor {
@@ -107,19 +107,33 @@ nav ul li a{
 
 #centrar1 {
     text-align: center;
-    margin:0px; /* Agrega un margen para desplazar los elementos desde el centro */
+    margin:0px; 
 }
 
 #centrar {
     text-align: center;
-    margin: 50px; /* Agrega un margen para desplazar los elementos desde el centro */
+    margin: 50px; 
 }
 
 
-#check {
-    display: flex; /* Utiliza flexbox para alinear elementos en la misma fila */
-    align-items: center; /* Alinea verticalmente los elementos en el centro */
+.horizontal-center {
+  text-align: center;
+  margin:30px;
 }
+
+.horizontal-center input,
+.horizontal-center label,
+.horizontal-center a {
+  display: inline-block;
+  margin: 0 10px; 
+}
+.black-link {
+  color: black; 
+  display: block;
+  margin: 10px 0; 
+   text-decoration: underline;
+}
+
 h2 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -162,4 +176,4 @@ p {
     margin-top: 20px;
 }
 
-/* Puedes agregar más estilos CSS según tus preferencias. */
+
