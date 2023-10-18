@@ -64,6 +64,37 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4660414061545!2d-99.1825700259109!3d19.435463540591634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8ad94aba5ab%3A0xd416092c18a9ec2c!2sLeibnitz%20270%2C%20Anzures%2C%20Miguel%20Hidalgo%2C%2011590%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1697585162161!5m2!1ses!2smx" width="600" height="450" style="border: 5px solid #F88E12; border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         </section>
+
+        <section>
+            <div class="contenedor-tarjeta">
+                <img src="img/trabajo.jpg" alt="quienes somos">
+
+                <div class="tarjeta">
+                <h1>Relación con inversionistas</h1>
+                <p>Somos una empresa que conecta el mundo inmobiliario y financiero. Brindamos un servicio completo para la venta, compra o alquiler de bienes inmuebles. Nuestra ventaja son más de 15 años de experiencia y suelo en ubicaciones atractivas Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
+                </div>
+                
+            </div>
+            <div class="contenedor-tarjeta">
+                <div class="tarjeta">
+                    <h1>Direccion del proyecto</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
+
+                </div>
+                <img src="img/trabajo1.jpg" alt="quienes somos">
+                
+            </div>
+            <div class="contenedor-tarjeta">
+                <img src="img/trabajo2.jpg" alt="quienes somos">
+
+                <div class="tarjeta">
+                <h1>Conoce nuestros Proyectos</h1>
+                <p>Somos una empresa que conecta el mundo inmobiliario y financiero. Brindamos un servicio completo para la venta, compra o alquiler de bienes inmuebles. Nuestra ventaja son más de 15 años de experiencia y suelo en ubicaciones atractivas Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
+                </div>
+                
+            </div>
+
+        </section>
         
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
