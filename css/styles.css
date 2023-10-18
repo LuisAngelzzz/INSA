@@ -229,3 +229,124 @@ nav ul li a{
   
 
 
+/***Seccion Ofertas****/
+.container-ofertas{
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    margin-top: -150px;
+}
+
+.content-ofers h2{
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px;
+    margin-top: 14%;
+    color: #E69600;
+    max-width: 620px;
+
+
+}
+
+
+/***carrusel y cards**/
+
+.carousel-container {
+    overflow: hidden; 
+    display: flex;
+    width: 1250px;
+    height: 400px;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s;
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 16px;
+  }
+
+  .card {
+    width: 300px;
+    height: 370px;
+    box-shadow: 0 4px 6px black;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-content {
+    padding: 16px;
+  }
+
+  /***botones***/
+
+  .button-container {
+display: flex;
+margin-left: 1090px;
+}
+
+.carousel-button {
+background: #0c1774;
+color: #fff;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+margin: 0 10px; 
+font-size: 20px; 
+border-radius: 50%;
+
+
+}
+.carousel-button:hover {
+    background-color: #acb5acca; 
+  }
+
+  .mostrar {
+    margin-left: 1090px;
+    padding: 10px 20px;
+    background-color: transparent; 
+    color: #0c1774; 
+    border: 2px solid #0c1774; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; 
+    transition: background-color 0.3s, border-color 0.3s; 
+  }
+  
+  .mostrar:hover {
+    background-color:#acb5acca; 
+    border-color: #0c1774; 
+  }
+  
+  a{
+    text-decoration: none;
+  }
+
+
+  .progress-bar {
+    width: 1050px;
+    height: 10px;
+    background-color: #ccc;
+
+  }
+  
+  .progress-fill {
+    height: 100%;
+    width: 0;
+    background-color: #0c1774; 
+    transition: width 0.5s; 
+  }
+  
+
+
