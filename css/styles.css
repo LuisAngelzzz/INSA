@@ -86,6 +86,7 @@ h1 {
     flex-direction: column;
     align-content: center;
     align-items: center;
+    text-align: center;
     margin: 3rem;
    
 }
@@ -201,5 +202,30 @@ nav ul li a{
 }
 
 
+@media only screen and (max-width: 768px) {
+    .contenedor-tarjeta {
+        display: flex;
+        padding: 1rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .contenedor-tarjeta img {
+        width: 100%; /* Ajustado para ocupar el ancho completo del contenedor */
+        max-width: 100%; /* Cambiado a 100% para adaptarse al contenedor */
+        border-style: solid;
+        border-color: orange;
+        border-width: 0.3rem;
+    }
+
+    .contenedor-estamos iframe{
+        width: 20rem;
+    }
+}
+ 
+  
+  
+  
 
 
