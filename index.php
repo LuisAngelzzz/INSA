@@ -16,7 +16,7 @@
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Comprar</a></li>
                 <li><a href="#">Rentar</a></li>
-                <li><a href="#">Conocenos</a></li>
+                <li><a href="quienes-somos.php">Conocenos</a></li>
                 <li><a href="login.php">Iniciar Sesion</a></li>
             </ul>
             <button class="btn"><img src="img/icon.png">Contactanos</button>

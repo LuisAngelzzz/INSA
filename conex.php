@@ -8,4 +8,3 @@ $bd  = "insadb";
 $conectar = mysqli_connect($host,$user,$clave,$bd);
 
 ?>
-//angel// 
