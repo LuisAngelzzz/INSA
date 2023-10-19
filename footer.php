@@ -33,6 +33,6 @@
 
 <div class="box__copyright">
     <hr>
-    <p>Todos los derechos reservados © 2021 <b></b></p>
+    <p>Todos los derechos reservados © 2023 <b></b></p>
 </div>
 </footer>

@@ -63,7 +63,7 @@ h1 {
 .contenedor-qsomos{
     width: 100%;
     min-height: 100vh;
-    background-color: aliceblue;
+    background-color: rgb(175, 194, 211);
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
