@@ -20,7 +20,7 @@
         </nav>
         <div class="content">
             <h1>Vida<br> moderna para todos</h1>
-            <p>Brindamos un servicio completo para la venta, compra o alquiler de bienes inmuebles.
+            <p>Brindamos un serviciio completo para la venta, compra o alquiler de bienes inmuebles.
                 Llevamos mas de 15 años en el mercado.
             </p>
                  <form>
