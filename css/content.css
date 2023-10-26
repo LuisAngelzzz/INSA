@@ -1,0 +1,175 @@
+body {
+   font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #002587; /* Color de texto azul rey */
+}
+
+.container1 {
+     display: block;
+    justify-content: center;
+    height: 120px;
+    width: 90%; /* Ancho total de la ventana */
+    padding: 20px;
+    
+}
+ 
+.labelsuperior {
+    justify-content: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: #000000;
+    padding: 5px;
+   
+}
+
+.labelinferior {
+   ; /* Muestra en un renglón separado */
+    justify-content: center;
+    font-weight: normal;
+    font-size: 20px;
+    color: #000000;
+    padding: 5px;
+}
+
+.container2 {
+     display: block;
+    justify-content: center;
+    height: 80px;
+    width: 90%; /* Ancho total de la ventana */
+    padding: 5px;
+    background-color: #eceaf1;
+}
+
+.container3 {
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    width: 90%;
+    padding: 5px;
+    background-color: #eceaf1;
+}
+
+.container4 {
+    display: block;
+   align-items: start;
+    height: 50px;
+    width: 90%;
+    background-color: #eceaf1;
+    padding: 5px;
+}
+
+
+/* Estilos CSS para tu página */
+h1 {
+    text-align: center;
+
+}
+
+form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+p {
+    display: block;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+select, input[type="text"], input[type="range"] {
+    width: 30%;
+    padding: 10px;
+    margin-top: 5px;
+    flex: 1 1 auto;
+}
+
+/* Estilos para el input de tipo range con el color #0c1774 */
+input[type="range"] {
+    width: 50%;
+    background: linear-gradient(to right, #0c1774, #0c1774);
+    border: none;
+    height: 5px;
+}
+
+/* Estilos para el pulgar del control deslizante en navegadores webkit */
+input[type="range"]::-webkit-slider-thumb {
+    background: #0c1774;
+    border: 2px solid #0c1774;
+    height: 15px;
+    width: 15px;
+}
+
+/* Estilos para el pulgar del control deslizante en navegadores Mozilla Firefox */
+input[type="range"]::-moz-range-thumb {
+    background: #0c1774;
+    border: 2px solid #0c1774;
+    height: 15px;
+    width: 15px;
+}
+
+input[type="submit"] {
+    margin-top: 15px;
+    background-color: #0c1774;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Resto de tus estilos CSS */
+
+
+/* Estilos para el botón de búsqueda */
+.boton-buscar {
+    margin-top: 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 30px; /* Ajusta el tamaño del botón según tus preferencias */
+    cursor: pointer;
+    background-image: url('../img/lupa.png'); /* Ruta de la imagen a utilizar */
+    background-size: 20px 20px; /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Posición de la imagen en el botón */
+    text-align: center;
+    text-indent: 18px; /* Espacio para la imagen */
+}
+
+.container5 {
+    display: block;
+   align-items: start;
+
+    height: 900px;
+    width: 90%;
+    background-color: #fff;
+    padding: 5px;
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos CSS para los contenedores de productos */
+.producto {
+    padding: 10px;
+    margin: 10px; /* Agregar margen a los productos para crear espacio entre ellos */
+    width: 430px; /* Ancho fijo para todos los elementos */
+    height: 350px; /* Alto fijo para todos los elementos */
+    text-align: center;
+    display: inline-block;
+    background-color: #ECECEC;
+}
+
+
+
+
+.producto img {
+    max-width: 400%;
+    height: 240px;
+}
