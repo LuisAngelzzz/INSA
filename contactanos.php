@@ -26,6 +26,7 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/styleFooter.css">
     <link rel="stylesheet" type="text/css" href="css/contacto.css">
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container" data-aos="fade-right">
@@ -38,59 +39,81 @@ if (isset($_POST['login'])) {
     </nav>
     
 
-    <div class="contacto">
-        <div class="contactofondo">
-            <label class="titulo">CONTACTO</label>
-            <label class="generaltext">Añade la información solicitada para contactarnos</label>
-            <br>
-     
-            <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
-                <div class="row">
-                    <label class="required" for="name">nombre:</label>
-                    <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
-                    <span id="name_validation" class="error_message"></span>
-                </div>
-                <div class="row">
-                    <label class="required" for="email">email:</label>
-                    <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
-                    <span id="email_validation" class="error_message"></span>
-                </div>
-                <div class="row">
-                    <label class="required" for="phone">numero de celular:</label>
-                    <input id="phone" class="input" name="phone" type="text" value="" size="30" /><br />
-                    <span id="phone_validation" class="error_message"></span>
-                </div>
-                <div class="row">
-                    <label class="required" for="message">mensaje:</label>
-                    <textarea id="message" class="inputmessage" name="message" rows="7" cols="30"></textarea><br />
-                    <span id="message_validation" class="error_message"></span>
-                </div>
-                <br>
-                <input id="submit_button" class="button" type="submit" value="enviar mensaje">
-            </form>
-        </div>
-    </div>
-
-<br><br> 
-
+    <section>
     
-<br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br><br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br><br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br><br>  <br>  <br>  <br>  <br>  <br>
-<br><br>
-    <div class="contenedor-padre">
-        <div class="contenedor-100">
-            <img src="img/avion.png" alt="Imagen de avión" />
-            <div class="centrar-vertical">
-                <br>
-                <label for="miInput">Suscribete al boletin</label>
-                <label for="miInput">recibe las ultimas novedades y ofertas interesantes e inmobiliarias</label>
-                <div class="centrarinput">
-                    <input type="text" id="miInput" name="miInput">
-                    <button type="button">Suscribe</button>
-                </div>
-            </div>
-        </div>
-        <div class="contenedor-25"></div>
+    <div class="section-header">
+      <div class="containers">
+        <h2>Contactanos</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dignissimos eaque doloremque, nulla mollitia facilis temporibus ullam voluptas nostrum consequatur? Fugiat vitae sint quo est eveniet perspiciatis eum asperiores ipsam.</p>
+      </div>
     </div>
-  
+    
+    <div class="containers">
+      <div class="row">
+        
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Direccion</h4>
+              <p>56383 Ixtapaluca,<br/> Estado De Mexico, Mexico, <br/>55060</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Telefono</h4>
+              <p>561-456-2321</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Correo Electronico</h4>
+             <p>example@email.com</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form action="" id="contact-form">
+            <h2>Enviar Mensaje</h2>
+            <div class="input-box">
+              <input type="text" required="true" name="">
+              <span>Nombre Completo</span>
+            </div>
+            
+            <div class="input-box">
+              <input type="email" required="true" name="">
+              <span>Correo Electronico</span>
+            </div>
+            
+            <div class="input-box">
+              <textarea required="true" name=""></textarea>
+              <span>Escribe tu mensaje...</span>
+            </div>
+            
+            <div class="input-box">
+              <input type="submit" value="Enviar" name="">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
 </body>
 </html>
