@@ -141,21 +141,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
     </center>
-    <br>
-    <div class="contenedor-padre">
-        <div class="contenedor-100">
-            <img src="img/avion.png" alt="Imagen de avión" />
-            <div class="centrar-vertical">
-                <br>
-                <label for="miInput">Suscribete al boletín</label>
-                <label for="miInput">recibe las ultimas novedades y ofertas interesantes e inmobiliarias</label>
-                <div class="centrarinput">
-                    <input type="text" id="miInput" name="miInput">
-                    <button type="button">Suscribe</button>
-                </div>
-            </div>
-        </div>
-        <div class="contenedor-25"></div>
-    </div>
+    
 </body>
+<footer>
+        <?php include('footer.php'); ?>
+    </footer>
 </html>
