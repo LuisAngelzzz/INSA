@@ -19,7 +19,7 @@
                 <li><a href="quienes-somos.php">Conocenos</a></li>
                 <li><a href="login.php">Iniciar Sesion</a></li>
             </ul>
-            <button class="btn"><img src="img/icon.png">Contactanos</button>
+            <button href="contactanos.php" class="btn"><img src="img/icon.png">Contactanos</button>
         </nav>
         <div class="content">
             <h1>Vida<br> moderna para todos</h1>
