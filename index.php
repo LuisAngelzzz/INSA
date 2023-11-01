@@ -40,7 +40,7 @@
             <p>Cumple tus sueños profesionales, disfruta al maximo de todos tus logros<br>
             del centro de la ciudad y de las viviendas de lujo
             </p>
-            <a href="#" class="mostrar">Mostrar todo</a>
+            <a href="filter.php" class="mostrar">Mostrar todo</a>
             <div class="progress-bar">
   <div class="progress-fill"></div>
 </div>
