@@ -1,0 +1,111 @@
+.principal {
+  font-weight: bold;
+  font-size: 45px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin-top: auto;
+  
+}
+
+/* parte a parte contenedor central */
+.contenidodepartamento {
+ display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    height: 100%;
+}
+
+/* parte a parte contenedores */
+.depaleft, deparight {
+    border: 1px solid #ccc;
+     background-color: #fab059;
+    padding: 30px;
+}
+
+.depacontent {
+    display: flex;
+ justify-content: center;
+    align-items: center;
+ margin-right: 0px;
+ 
+}
+/* parte a parte contenedor derech */
+
+.mueble {
+ width: 100%;
+height: 55%;
+}
+.depaimages {
+ width: 21%;
+height: 26%;
+}
+.descrip {
+ width: 80%;
+height: 30%;
+}
+
+.circulo {
+            width: 65px;
+            height: 65px;
+            background-color: #3498db; /* Color de fondo del círculo */
+            border-radius: 50%; /* Hace que el elemento sea un círculo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white; /* Color del texto */
+            font-size: 24px; /* Tamaño del texto */
+            font-weight: bold; /* Peso del texto */
+        }
+
+.depacontent2 {
+width: 80%;
+height: 10%;
+    display: flex;
+ justify-content: center;
+    align-items: center;
+ margin-right: 0px;
+ background-color: #fab059;
+}
+
+
+/* parte a parte contenedor izq */
+.depatext {
+font-size: 28px;
+font-weight: bold;
+
+}
+
+button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #0c1774;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+
+.contenidodepartamento1 {
+ display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    height: 100%;
+padding: 30px;
+}
+
+.depaleft1 {
+    border: 1px solid #ccc;
+    background-color: #fab059;
+    width: 95%;
+    height: 50%;
+   padding: 30px;
+}
+
+.deparight1 {
+    padding: 30px;
+    width: 60%;
+}
+
+
