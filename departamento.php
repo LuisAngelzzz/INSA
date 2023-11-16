@@ -22,32 +22,45 @@
  
 
 <div class="principal">
-<label for="principal">Departamento premium en el centro de Mexico con vistas panoramicas</label>
+<label for="principal">ㅤDepartamento premium en el centro de Mexico con ㅤㅤㅤvistas panoramicas</label>
 </div>
 
 <div class="contenidodepartamento">
 
 <div class="deparight">
-            <img src="img/mueble.jpg" class="mueble">
-<div class="depacontent">
-<p class="circulo"><</p>
- <img src="img/silla.jpg" class="depaimages">
- <img src="img/cama.jpg" class="depaimages">
- <img src="img/sala.jpg" class="depaimages">
-<p class="circulo">></p>
-</div>
-
-<div class="depacontent1">
-<center><img src="img/descripcion.jpg" class="descrip"></center>
-</div>
+            <img src="img/mueble.png" class="mueble">
 <br><br>
-<center><div class="depacontent2">
-<p class="depatext1">Renta desde:ㅤㅤ</p>
-<p class="depatext">2500$ /mesㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p> 
-<button>Quiero rentar</button> 
-
+  <center>
+<div class="carousel-container">
+<button class="carousel-btn prev">&lt;</button>
+</div>
+<div class="carousel-container1">
+    <div class="carousel">
+      <img src="img/silla.png" alt="Imagen 1" class="imgcarousel">
+      <img src="img/sala.png" alt="Imagen 2" class="imgcarousel">
+      <img src="img/cama.png" alt="Imagen 3" class="imgcarousel">
+      <img src="img/silla.png" alt="Imagen 4" class="imgcarousel">
+      <img src="img/sala.png" alt="Imagen 5" class="imgcarousel">
+      <img src="img/cama.png" alt="Imagen 6" class="imgcarousel">
+      
+    </div>
+  </div>
+<div class="carousel-container2">
+<button class="carousel-btn next">&gt;</button>
 </div>
 </center>
+<br>
+<div class="depacontent1">
+<center><img src="img/descr.png" class="descrip"></center>
+</div>
+<br><br>
+<div class="depacontent2">
+        <div>
+            <p class="depatext1">Renta desde:</p>
+            <p class="depatext">2500$ /mes</p>
+        </div>
+        <button class="buttondepa">Quiero rentar</button>
+    </div>
 
 </div>
 
@@ -63,15 +76,15 @@
 <p class="depatext1">E-mail</p>
  <input type="text" id="miInput" name="miInput">
 <br><br><br><br>
-<input type="checkbox" name="tarea1"> Acepto el tratamiento de datos personales.
+<input type="checkbox" name="tarea1"> Acepto el tratamiento de datos<br> ㅤ personales.
 <br><br>
 
 <center><button>Send Message</button> </center>
 <center><p class="depatext">Redes Sociales</p></center>
-<center><img src="img/twitter.png" width="40" height="40">
-<img src="img/fb.png" width="40" height="40">
-<img src="img/ig.png" width="40" height="40">
-<img src="img/wp.png" width="40" height="40"></center>
+<center><img src="img/twitter.png" class="imgredes">
+<img src="img/fb.png" class="imgredes">
+<img src="img/ig.png" class="imgredes">
+<img src="img/wp.png" class="imgredes"></center>
 </div>
 </div>
 <br><br><br><br>
@@ -143,22 +156,75 @@ The kitchen of the LEICHT brand with SIEMENS appliances has been made to measure
 
 </div>
 </div>
-<br><br><br><br>
+<center><p class="ubicacion">Ubicacion</p>
 
-<div class="contenedor-padre">
-    <div class="contenedor-100">
-  <img src="img/avion.png" alt="Imagen de avión" />
-  <div class="centrar-vertical">
 <br>
-    <label for="miInput">Suscribete al boletín</label>
-    <label for="miInput">recibe las ultimas novedades y ofertas interesantes e inmobiliarias</label>
-<div class="centrarinput">
-    <input type="text" id="miInput" name="miInput">
-    <button type="button">Suscribe</button>
-  </div>
+<img src="img/ubicacion.png" class="ubic">
+<br><br>
+</center>
+
+<footer>
+
+
+
+<div class="container__footer">
+    <div class="box__footer">
+        <div class="logo">
+            <img src="img/LOGO_INSA.png" alt="">
+        </div>
+        <div class="terms">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente deserunt.</p>
+        </div>
+    </div>
+  
+
+    <div class="box__footer">
+        <h2>Politicas</h2>
+        <a href="#">Acerca de</a>
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">leyes</a>
+        <a href="#">Servicios</a>              
+    </div>
+
+    <div class="box__footer">
+        <h2>Redes Sociales</h2>
+        <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+        <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+        <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
+    </div>
 </div>
+
+<div class="box__copyright">
+    <hr>
+    <p>Todos los derechos reservados © 2023 <b></b></p>
 </div>
-    <div class="contenedor-25"></div>
-  </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  const carousel = document.querySelector(".carousel");
+
+  let currentIndex = 0;
+
+  nextBtn.addEventListener("click", function () {
+    currentIndex = (currentIndex + 1) % Math.ceil(carousel.children.length / 3);
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener("click", function () {
+    currentIndex = (currentIndex - 1 + Math.ceil(carousel.children.length / 3)) % Math.ceil(carousel.children.length / 3);
+    updateCarousel();
+  });
+
+  function updateCarousel() {
+    const translateValue = -currentIndex * (100 / 1) + "%";
+    carousel.style.transform = "translateX(" + translateValue + ")";
+  }
+});
+
+
+</script>
 </body>
 </html>
