@@ -5,9 +5,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: auto;
+
   margin-top: auto;
-  
+   width: 80%;
 }
 
 /* parte a parte contenedor central */
@@ -15,13 +15,22 @@
  display: grid;
     grid-template-columns: 1fr 0.6fr;
     height: 100%;
+   
 }
 
 /* parte a parte contenedores */
 .depaleft, deparight {
     border: 1px solid #ccc;
      background-color: #fab059;
-    padding: 30px;
+    padding: 60px;
+}
+
+.depaleft {
+    border: 1px solid #ccc;
+    background-color: #fab059;
+    width: 70%;
+    height: 90%;
+   padding: 30px;
 }
 
 .depacontent {
@@ -35,7 +44,7 @@
 
 .mueble {
  width: 100%;
-height: 55%;
+height: 45%;
 }
 .depaimages {
  width: 21%;
@@ -59,15 +68,16 @@ height: 30%;
             font-weight: bold; /* Peso del texto */
         }
 
-.depacontent2 {
-width: 80%;
-height: 10%;
-    display: flex;
- justify-content: center;
-    align-items: center;
- margin-right: 0px;
- background-color: #fab059;
-}
+ .depacontent2 {
+            width: 80%;
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+             align-items: center;
+            margin: 0 auto;
+            background-color: #fab059;
+            padding: 10px;
+        }
 
 
 /* parte a parte contenedor izq */
@@ -77,6 +87,21 @@ font-weight: bold;
 
 }
 
+.buttondepa {
+            background-color: #0c1774;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+           
+        }
+.imgredes {
+    width: 10%;
+    height: 10%;
+}
+
+
 button {
             padding: 10px 20px;
             font-size: 16px;
@@ -85,6 +110,7 @@ button {
             color: white;
             border: none;
             border-radius: 5px;
+
         }
 
 
@@ -92,20 +118,84 @@ button {
  display: grid;
     grid-template-columns: 1fr 0.6fr;
     height: 100%;
+    width: 97%;
 padding: 30px;
 }
 
 .depaleft1 {
     border: 1px solid #ccc;
     background-color: #fab059;
-    width: 95%;
+    width: 72%;
     height: 50%;
    padding: 30px;
 }
 
 .deparight1 {
-    padding: 30px;
-    width: 60%;
+    padding: 50px;
+    width: 55%;
 }
 
 
+.carousel-container {
+  position: relative;
+  width: 100%;
+
+}
+.carousel-container1 {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+ 
+  justify-content: flex-start;
+  transition: transform 0.5s ease;
+}
+
+.imgcarousel {
+  width: 30%;
+  height: auto;
+  margin-right: 4%;
+}
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  background-color: #0c1774;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.prev {
+  left: 10px;
+  top: 30px;
+  background-color: #fab059;
+}
+
+.next {
+  right: 775px;
+  top: 670px;
+}
+
+
+.ubicacion {
+font-size: 48px;
+font-weight: bold;
+color: #F3932C;
+}
+
+.ubic {
+  width: 100%;
+  height: 50%;
+ border: 15px solid #F3932C; /* Ajusta el tamaño y color del borde según tus preferencias */
+
+}
