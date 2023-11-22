@@ -8,8 +8,7 @@
         <div class="logo">
             <img src="img/LOGO_INSA.png" alt="">
         </div>
-        <div class="terms">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente deserunt.</p>
+        <div class="terms"></p>
         </div>
     </div>
   

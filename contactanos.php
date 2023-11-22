@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inicio de Sesión</title>
+    <title>Contactanos</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/styleFooter.css">
     <link rel="stylesheet" type="text/css" href="css/contacto.css">
