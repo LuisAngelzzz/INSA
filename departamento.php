@@ -28,7 +28,7 @@
 <div class="contenidodepartamento">
 
 <div class="deparight">
-            <img src="img/mueble.png" class="mueble">
+            <img src="img/muebledos.jpg" class="mueble">
 <br><br>
   <center>
 <div class="carousel-container">
