@@ -40,10 +40,15 @@ if(isset($_POST['login'])) {
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/contacto.css">
+
     <style>
+
+
+
         .error-popup {
             display: none;
             position: fixed;
@@ -57,6 +62,8 @@ if(isset($_POST['login'])) {
             opacity: 0;
             transition: opacity 0.5s;
         }
+/* Estilos predeterminados para la imagen */
+
     </style>
 </head>
 <body>
@@ -69,22 +76,23 @@ if(isset($_POST['login'])) {
         <button class="btn"><img src="img/icon.png">Contactanos</button>
     </nav>
     <br><br><br>
-    <div id="contenedorprimario">
+
+<center>    <div id="contenedorprimario">
         <div id="izquierdo">
             <img src="img/logoINSA.png" class="logoINSA">
         </div>
         <div id="derecho">
             <div id="logincontenedor">
-                <br><br>
-                <img src="img/logo.png" class="logoI">
                 <br>
+                <img src="img/logo.png" class="logoI">
+               
                 <label>Tu partner perfecto para el alquiler de tu casa</label>
                 <h2>Iniciar Sesión</h2>
                 <form method="post" action="login.php">
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" required><br>
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required><br>
+                    <input type="password" name="password" id="password" required><br><br>
                     <div class="horizontal-center">
 
                         <input type="checkbox" id="recuerdame">
@@ -98,13 +106,13 @@ if(isset($_POST['login'])) {
                     <div id="centrar">
                         <label>O inicia sesión con:</label>
                         <a href="fb.com">
-                            <img src="img/fb.png" width="50" height="50">
+                            <img src="img/fb.png" width="40" height="40">
                         </a>
                         <a href="fb.com">
-                            <img src="img/link.png" width="50" height="50">
+                            <img src="img/link.png" width="40" height="40">
                         </a>
                         <a href="https://fb.com">
-                            <img src="img/google.png" width="50" height="50">
+                            <img src="img/google.png" width="40" height="40">
                         </a>
                     </div>
                 </form>
@@ -112,6 +120,7 @@ if(isset($_POST['login'])) {
         </div>
 
     </div>
+</center>
 <center>
        <div id="after_submit"><?php echo $captchaMessage; ?></div>
       <button id="open-captcha-modal" class="btn">CAPTCHA</button>
@@ -126,7 +135,6 @@ if(isset($_POST['login'])) {
         </div>
     </div>
    </center>
-<br>
     <div id="mensaje-error-popup" class="error-popup">
         <?php echo $error_message; ?>
     </div>

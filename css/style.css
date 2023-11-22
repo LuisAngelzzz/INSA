@@ -1,10 +1,11 @@
+
 body {
    font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: auto;
     color: #002587; /* Color de texto azul rey */
 }
 
@@ -12,16 +13,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 674px;
-    width: 90%; /* Ancho total de la ventana */
+    height: 613px;
+    width: 91%; /* Ancho total de la ventana */
     padding: 0px;
-    background-color: #EFEFEF;
+    background: linear-gradient(to right, transparent 35%, #EFEFEF 25%); /* Gradiente lineal */
 }
+
 
 /* Codigo Pauuu */
 .container{
-    width: 100%;
-    min-height: 100vh;
+    width: 300%;
+    min-height: 105vh;
     background-image: linear-gradient(rgba(76, 109, 201, 0.65),rgba(175, 173, 189, 0.65));
     background-size: cover;
     background-position: center;
@@ -80,25 +82,34 @@ nav ul li a{
 #izquierdo {
     flex: 1; 
     padding: 0px;
-}
-
-#logoINSA {
     max-width: 100%;
-    height: auto;
+    height: 100%
 }
 
 #derecho {
     flex: 1; 
-    padding: 80px;
+    padding: 0px;
+    max-width: 100%;
+    height: 100%
 }
+
+.logoINSA {
+    flex: 1; 
+    max-width: 450px;
+    height: 100%;
+   
+}
+
 
 #logincontenedor {
-    height: 100%;
-    background-color: #EFEFEF;
-    display: flex;
 
+    height: 90%;
+    width: 100%;
+    align-items: flex-start;
+    display: flex;
     flex-direction: column;
 }
+
 .logoI {
     height: 40px;
     width: 20%;
@@ -106,19 +117,31 @@ nav ul li a{
 }
 
 #centrar1 {
-    text-align: center;
-    margin:0px; 
+    display: flex; /* Convierte el contenido en un flex container */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    text-align: center; /* Alinea el texto al centro */
+    margin: 20px;
 }
+
+#centrar1 > * {
+    margin: 10px; /* Puedes aplicar un margen a los elementos internos si lo deseas */
+}
+
 
 #centrar {
     text-align: center;
-    margin: 50px; 
+    margin: 20px; 
 }
 
 
 .horizontal-center {
+   display: flex; /* Convierte el contenido en un flex container */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    text-align: center; /* Alinea el texto al centro */
   text-align: center;
-  margin:30px;
+  margin:40px;
 }
 
 .horizontal-center input,
@@ -140,6 +163,7 @@ h2 {
 }
 
 label {
+    align-items: flex-start;
     display: block;
     margin-bottom: 10px;
 }
@@ -176,4 +200,23 @@ p {
     margin-top: 20px;
 }
 
+/* para moviles */
 
+#contenedorprimario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 613px;
+    width: 91%;
+    padding: 0;
+    background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
+}
+
+/* Media query para pantallas más pequeñas, por ejemplo, 768px o menos */
+@media (max-width: 768px) {
+    #contenedorprimario {
+        height: 400px; /* Cambia la altura para pantallas más pequeñas */
+        width: 100%; /* Puede mantener el ancho al 100% o ajustarlo según tus necesidades */
+        background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
+    }
+}
