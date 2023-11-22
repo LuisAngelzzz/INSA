@@ -16,7 +16,6 @@
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Comprar</a></li>
                 <li><a href="#">Rentar</a></li>
-                <li><a href="#">Conocenos</a></li>
                 <li><a href="login.php">Iniciar Sesion</a></li>
             </ul>
             <button class="btn"><img src="img/icon.png">Contactanos</button>
@@ -27,7 +26,10 @@
 
                 <div class="tarjeta">
                 <h1>¿Quienes somos?</h1>
-                <p>Somos una empresa que conecta el mundo inmobiliario y financiero. Brindamos un servicio completo para la venta, compra o alquiler de bienes inmuebles. Nuestra ventaja son más de 15 años de experiencia y suelo en ubicaciones atractivas Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
+                <p>Una organizacion empresarial integrada por personas comprometidas con los principios de trabajo  en equipo,
+                    entrega y dedicaciòn total a la empresa, profesionalismo y dominio tècnico, con el objeto de proporcionar
+                    soluciones enfocadas a la construcciòn en los sectores inmobiliario, industrial, pùblico y privado.
+                </p>
                 </div>
                 
             </div>
@@ -35,10 +37,15 @@
             <div class="contenedor-tarjeta">
                 <div class="tarjeta">
                     <h1>Misión</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
+                    <p>Participar en el desarrollo, construcciòn y operaciòn de infrestructura urbana, vivienda e industria, que 
+                        nuestra sociedad demanda, siempre con vocaciòn de servicio al cliente, capacidad tècnica actualizada, ètica profesional y
+                        calidad invariable en el cumplimiento de nuestros compromisos.
+                    </p>
 
                     <h1>Visión</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
+                    <p>Fortalecerse como una empresa visionaria, innovadora y creativa que nos lleve al crecimiento y mejoramiento continuo,
+                        atavès de la eficiencia operativa, el buen manejo de los recursos y la calidad de nuestros servicios.
+                    </p>
                 </div>
                 <img src="img/mision.jpg" alt="quienes somos">
                 
@@ -48,10 +55,17 @@
                 <img src="img/vision.jpeg" alt="quienes somos">
                 <div class="tarjeta">
                     <h1>Valores</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
+                    <p>Honestidad</p>
+                    <p>Respeto</p>
+                    <p>Confianza</p>
+                    <p>Responsabilidad</p>
+                    <p>Compromiso</p>
 
                     <h1>Capital Humano</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
+                    <p> Nuestro Capital Humamano: Trabajar estrechamente con los requerimientos y alcances que nuestros clientes buscan,
+                        comprendiendo las necesidades de cada proyecto y lograr capitalizarlos con soluciones integrales que innoven y optimicen la 
+                        productividad de nuestros clientes.
+                    </p>
                 </div>
                 
             </div>
@@ -65,37 +79,7 @@
 
         </section>
 
-        <section>
-            <div class="contenedor-tarjeta">
-                <img src="img/trabajo.jpg" alt="quienes somos">
-
-                <div class="tarjeta">
-                <h1>Relación con inversionistas</h1>
-                <p>Somos una empresa que conecta el mundo inmobiliario y financiero. Brindamos un servicio completo para la venta, compra o alquiler de bienes inmuebles. Nuestra ventaja son más de 15 años de experiencia y suelo en ubicaciones atractivas Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
-                </div>
-                
-            </div>
-            <div class="contenedor-tarjeta">
-                <div class="tarjeta">
-                    <h1>Direccion del proyecto</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
-
-                </div>
-                <img src="img/trabajo1.jpg" alt="quienes somos">
-                
-            </div>
-            <div class="contenedor-tarjeta">
-                <img src="img/trabajo2.jpg" alt="quienes somos">
-
-                <div class="tarjeta">
-                <h1>Conoce nuestros Proyectos</h1>
-                <p>Somos una empresa que conecta el mundo inmobiliario y financiero. Brindamos un servicio completo para la venta, compra o alquiler de bienes inmuebles. Nuestra ventaja son más de 15 años de experiencia y suelo en ubicaciones atractivas Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
-                </div>
-                
-            </div>
-
-        </section>
-        
+       
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -104,4 +88,7 @@
         AOS.init();
       </script>
 </body>
+<footer>
+        <?php include('footer.php'); ?>
+    </footer>
 </html>
