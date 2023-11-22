@@ -3,7 +3,6 @@
 <head>
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/styleFooter.css">
     <link rel="stylesheet" type="text/css" href="css/departamento.css">
 </head>
 <body>
@@ -19,10 +18,12 @@
             </ul>
             <button class="btn"><img src="img/icon.png">Contactanos</button>
         </nav>
+        <br><br><br>
  
 
 <div class="principal">
-<label for="principal">ㅤDepartamento premium en el centro de Mexico con ㅤㅤㅤvistas panoramicas</label>
+  
+<label for="principal">Departamento premium en el centro de Mexico con vistas panoramicas</label>
 </div>
 
 <div class="contenidodepartamento">
@@ -36,22 +37,24 @@
 </div>
 <div class="carousel-container1">
     <div class="carousel">
-      <img src="img/silla.png" alt="Imagen 1" class="imgcarousel">
-      <img src="img/sala.png" alt="Imagen 2" class="imgcarousel">
-      <img src="img/cama.png" alt="Imagen 3" class="imgcarousel">
-      <img src="img/silla.png" alt="Imagen 4" class="imgcarousel">
-      <img src="img/sala.png" alt="Imagen 5" class="imgcarousel">
-      <img src="img/cama.png" alt="Imagen 6" class="imgcarousel">
+      
+      <img src="img/sillados.jpg" alt="Imagen 1" class="imgcarousel">
+      <img src="img/salados.jpg" alt="Imagen 2" class="imgcarousel">
+      <img src="img/camados.jpg" alt="Imagen 3" class="imgcarousel">
+      <img src="img/sillados.jpg" alt="Imagen 4" class="imgcarousel">
+      <img src="img/salados.jpg" alt="Imagen 5" class="imgcarousel">
+      <img src="img/camados.jpg" alt="Imagen 6" class="imgcarousel">
       
     </div>
   </div>
+  <br>
 <div class="carousel-container2">
 <button class="carousel-btn next">&gt;</button>
 </div>
 </center>
 <br>
 <div class="depacontent1">
-<center><img src="img/descr.png" class="descrip"></center>
+<center><img src="img/departamento.png" class="descrip"></center>
 </div>
 <br><br>
 <div class="depacontent2">
@@ -61,10 +64,7 @@
         </div>
         <button class="buttondepa">Quiero rentar</button>
     </div>
-
 </div>
-
-
 
 
 <div class="depaleft">
@@ -79,7 +79,7 @@
 <input type="checkbox" name="tarea1"> Acepto el tratamiento de datos<br> ㅤ personales.
 <br><br>
 
-<center><button>Send Message</button> </center>
+<center><button>Enviar Mensaje</button> </center>
 <center><p class="depatext">Redes Sociales</p></center>
 <center><img src="img/twitter.png" class="imgredes">
 <img src="img/fb.png" class="imgredes">
@@ -87,10 +87,9 @@
 <img src="img/wp.png" class="imgredes"></center>
 </div>
 </div>
-<br><br><br><br>
+<br><br>
 
 <div class="contenidodepartamento1">
-
 <div class="deparight1">
 <p class="depatext">Caracteristicas</p>
 <p class="depatext1">
@@ -163,43 +162,6 @@ The kitchen of the LEICHT brand with SIEMENS appliances has been made to measure
 <br><br>
 </center>
 
-<footer>
-
-
-
-<div class="container__footer">
-    <div class="box__footer">
-        <div class="logo">
-            <img src="img/LOGO_INSA.png" alt="">
-        </div>
-        <div class="terms">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente deserunt.</p>
-        </div>
-    </div>
-  
-
-    <div class="box__footer">
-        <h2>Politicas</h2>
-        <a href="#">Acerca de</a>
-        <a href="#">Aviso de Privacidad</a>
-        <a href="#">leyes</a>
-        <a href="#">Servicios</a>              
-    </div>
-
-    <div class="box__footer">
-        <h2>Redes Sociales</h2>
-        <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
-        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
-        <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
-        <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
-    </div>
-</div>
-
-<div class="box__copyright">
-    <hr>
-    <p>Todos los derechos reservados © 2023 <b></b></p>
-</div>
-</footer>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const prevBtn = document.querySelector(".prev");
@@ -227,4 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 </body>
+<footer>
+        <?php include('footer.php'); ?>
+    </footer>
 </html>
