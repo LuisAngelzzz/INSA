@@ -13,7 +13,7 @@
         <nav>
             <img src="img/LOGO_INSA.png" class="logo">
             <ul>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="index.php">Inicio</a></li>
                 <li><a href="#">Comprar</a></li>
                 <li><a href="#">Rentar</a></li>
                 <li><a href="quienes-somos.php">Conocenos</a></li>
