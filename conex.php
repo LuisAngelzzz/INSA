@@ -5,6 +5,6 @@ $user = "root";
 $clave = "";
 $bd  = "insadb";
 
-$conectar = mysqli_connect($host,$user,$clave,$bd);
+$conn = mysqli_connect($host,$user,$clave,$bd);
 
 ?>

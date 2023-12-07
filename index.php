@@ -1,9 +1,6 @@
 <?php
-// Conexión a la base de datos (ajusta los datos según tu configuración)
-$host = "localhost";
-$user = "root";
-$clave = "";
-$bd  = "insadb";
+// Conexión a la base de datos (Ajustar todo en el conex.php)
+require 'conex.php';
 
 $conn = mysqli_connect($host,$user,$clave,$bd);
 

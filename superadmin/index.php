@@ -25,7 +25,7 @@
         <!-- ============================================================== -->
        <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="../index.html">INSA</a>
+                <a class="navbar-brand" href="../index.php">INSA</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -280,12 +280,7 @@ John Abraham</h5>
                                 <div class="table-responsive">
                                 <?php
 
-$host = "localhost";
-$user = "root";
-$clave = "";
-$bd  = "insadb";
-
-$conn = new mysqli($host, $user, $clave, $bd);
+include '../conex.php';
 
 
 if ($conn->connect_error) {

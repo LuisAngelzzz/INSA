@@ -120,7 +120,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+          <li><a class="nav-link scrollto active" href="index.php">Inicio</a></li>
           <li><a class="nav-link scrollto" href="#about">conversaciones</a></li>
           <li><a class="nav-link scrollto" href="#services">marketing</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">asistencia</a></li>
