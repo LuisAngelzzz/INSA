@@ -12,6 +12,7 @@
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/libs/css/style.css">
     <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    
 </head>
 
 <body>
@@ -261,9 +262,7 @@ John Abraham</h5>
                         </div>
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- end pageheader -->
-                <!-- ============================================================== -->
+          
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         
@@ -272,70 +271,106 @@ John Abraham</h5>
                 </div>
             </div>
 
-            <!-- basic table  -->
+          
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <h5 class="card-header">Vendedores</h5>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered first">
-                                        <thead>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Apellido Paterno</th>
-                                                <th>Apellido Materno</th>
-                                                <th>Activo</th>
-                                                <th>Accion</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger </td>
-                                                <td>Nixon</td>
-                                                <td>Edinburgh</td>
-                                                <td><a href="#" class="btn btn-success">Activo</a></td>
-                                                <td> <i class="fas fa-pencil-alt"></i> Editar</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett </td>
-                                                <td>Winters</td>
-                                                <td>Brady</td>
-                                                <td><a href="#" class="btn btn-danger">Inactivo</a></td>
-                                                <td> <i class="fas fa-pencil-alt"></i> Editar</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Ashton </td>
-                                                <td>Cox</td>
-                                                <td>O'hearn</td>
-                                                <td><a href="#" class="btn btn-success">Activo</a></td>
-                                                <td> <i class="fas fa-pencil-alt"></i> Editar</td>
-                                                
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td>Donna </td>
-                                                <td>Snider</td>
-                                                <td>Newton</td>
-                                                <td><a href="#" class="btn btn-success">Activo</a></td>
-                                                <td> <i class="fas fa-pencil-alt"></i> Editar</td>
-                                                
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Apellido Paterno</th>
-                                                <th>Apellido Materno</th>
-                                                <th>Activo</th>
-                                                <th>Accion</th>
-                                                
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                <?php
+
+$host = "localhost";
+$user = "root";
+$clave = "";
+$bd  = "insadb";
+
+$conn = new mysqli($host, $user, $clave, $bd);
+
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+$sql = "SELECT nombreUsuario, activo FROM vendedor";
+
+
+$result = $conn->query($sql);
+if ($result === false) {
+    die("Error en la consulta: " . $conn->error);
+}
+?>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+<script>
+$(document).ready(function() {
+    $(".btn-activo").click(function(e) {
+        e.preventDefault();
+
+        var row = $(this).closest("tr");
+        var nombre = row.find("td:first").text();
+        var activo = (row.find(".btn-activo").text() === "Activo") ? 0 : 1;
+
+        $.ajax({
+            type: "POST",
+            url: "actualizar_estado.php",
+            data: { nombre: nombre, activo: activo },
+            success: function(response) {
+                if (response == 1) {
+                    row.find(".btn-activo").text("Activo").removeClass("btn-danger").addClass("btn-success");
+                } else {
+                    row.find(".btn-activo").text("Inactivo").removeClass("btn-success").addClass("btn-danger");
+                }
+            },
+            error: function(error) {
+                console.log("Error al realizar la solicitud AJAX: " + error);
+            }
+        });
+    });
+});
+</script>
+
+
+<div class="table-responsive">
+    <?php
+    if ($result !== null && $result->num_rows > 0) {
+        echo '<table class="table table-striped table-bordered first">';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th>Nombre</th>';
+        echo '<th>Activo</th>';
+        echo '<th>Accion</th>';
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody>';
+
+        while ($row = $result->fetch_assoc()) {
+            echo '<tr>';
+            echo '<td>' . $row["nombreUsuario"] . '</td>';
+            echo '<td><a href="#" class="btn btn-activo ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
+            echo '<td><i class="fas fa-pencil-alt"></i> Editar</td>';
+            echo '</tr>';
+        }
+
+        echo '</tbody>';
+        echo '<tfoot>';
+        echo '<tr>';
+        echo '<th>Nombre</th>';
+        echo '<th>Activo</th>';
+        echo '<th>Accion</th>';
+        echo '</tr>';
+        echo '</tfoot>';
+        echo '</table>';
+    } else {
+        echo "No hay vendedores en la base de datos";
+    }
+
+    $conn->close();
+    ?>
+</div>
                                 </div>
                             </div>
                         </div>

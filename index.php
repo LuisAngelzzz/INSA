@@ -1,3 +1,59 @@
+<?php
+// Conexión a la base de datos (ajusta los datos según tu configuración)
+$host = "localhost";
+$user = "root";
+$clave = "";
+$bd  = "insadb";
+
+$conn = mysqli_connect($host,$user,$clave,$bd);
+
+// Verifica la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Consulta para obtener datos de los vendedores
+$sql = "SELECT nombreUsuario, activo FROM vendedor";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Genera la tabla dinámicamente
+    echo '<table class="table table-striped table-bordered first">';
+    echo '<thead>';
+    echo '<tr>';
+    echo '<th>Nombre</th>';
+    echo '<th>Activo</th>';
+    echo '<th>Accion</th>';
+    echo '</tr>';
+    echo '</thead>';
+    echo '<tbody>';
+
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td>' . $row["nombre"] . '</td>';
+        echo '<td><a href="#" class="btn ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
+        echo '<td><i class="fas fa-pencil-alt"></i> Editar</td>';
+        echo '</tr>';
+    }
+
+    echo '</tbody>';
+    echo '<tfoot>';
+    echo '<tr>';
+    echo '<th>Nombre</th>';
+    echo '<th>Activo</th>';
+    echo '<th>Accion</th>';
+    echo '</tr>';
+    echo '</tfoot>';
+    echo '</table>';
+} else {
+    echo "No hay vendedores en la base de datos";
+}
+
+// Cierra la conexión
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
