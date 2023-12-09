@@ -220,3 +220,29 @@ p {
         background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
     }
 }
+
+
+.ventana-emergente {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(100, 149, 237, 0.9); /* Utilizamos un color con transparencia */
+    padding: 20px;
+    border-radius: 15px; /* Añadimos bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.contenido-ventana {
+    text-align: center;
+    color: white; /* Cambiamos el color del texto para que sea visible sobre el fondo semi-transparente */
+}
+
+/* Añadimos un efecto de transición para hacerlo más suave */
+.ventana-emergente {
+    transition: all 0.3s ease;
+}
+
+/* Puedes ajustar estos estilos según tus preferencias */
