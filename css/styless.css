@@ -1,0 +1,130 @@
+.textoproducto {
+
+font-size: 60px;
+font-style: oblique;
+font-weight: bold;
+color: #002587 !important;
+justify-content: center;
+padding: 2%;
+}
+
+.detalles {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    height: 100%;
+}
+
+.detalles1,.detalles2 {
+    flex: 1; /* Que cada elemento ocupe la mitad del espacio disponible */
+    padding: 10px; /* Espaciado opcional para separar los elementos */
+    box-sizing: border-box; /* Incluir el relleno en el tamaño total del elemento */
+    
+}
+
+.previstaimg {
+
+    width: 90%;
+    height: 40%;
+    padding-left: 3%
+}
+
+.especificaciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    font-weight: bold;
+    font-size: 24px;
+    gap: 15px;
+    width: 85%;
+}
+.pnglogos {
+    width: 8%;
+    height: 8%;
+}
+.rentade {
+    background-color: #fab059;
+    width: 80%;
+    height: 8%;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline-start: 6%;
+}
+
+.txtrenta{
+    margin-left: 3%;
+}
+.buttondepa {
+        background-color: #0c1774;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.detalles2 {
+    background-color: #fab059;
+    height: 700px;
+    width: 80%;
+
+}
+
+.imgredes {
+    width: 10%;
+    height: 10%;
+    margin: 2%;
+}
+
+.miboton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #0c1774;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.caracter {
+    font-weight: bold;
+    font-size: 40px;
+    color: #002587 !important;
+    padding: 5%;
+    height: 100%;
+}
+
+.textcaracter {
+    font-size: 21px;
+    width: 65%;
+margin-inline-start: 2%;
+
+}
+
+.detalletext {
+    font-size: 20px;
+    font-weight: bold;
+    margin-inline-start: 8%;
+    color: #002587;
+    
+}
+
+ /* Estilos adicionales para personalizar el carrusel */
+ .responsive {
+    width: 450px;
+    height: 60px;
+    right: 3%;
+  }
+
+
+  /* Establecer tamaño de las imágenes */
+  .responsive img {
+    width: 120px;
+    height: 70px;
+    border-radius: 5px; /* Agrega bordes redondeados a las imágenes */
+    }
+
