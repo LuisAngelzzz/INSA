@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Super Administrador</title>
+    <title>Gerente</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -248,7 +248,7 @@ John Abraham</h5>
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Administrador </h2>
+                            <h2 class="pageheader-title">Gerente </h2>
                             <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
@@ -264,11 +264,86 @@ John Abraham</h5>
                 </div>
           
                 <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        
-                        <a href="#" class="btn btn-primary">Nuevo</a>
-                    </div>
-                </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nuevo</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Nuevo Usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form id="formularioNuevoUsuario" action="insert_vendedor.php" method="POST">
+  
+              <div class="form-group">
+                <label for="nuevoNombreUsuario">Nombre de Usuario:</label>
+                <select class="form-control" id="nuevoNombreUsuario" name="nuevoNombreUsuario" required>
+      <?php
+    
+    include '../conex.php';
+      $consulta = "SELECT NombreUsuario FROM infousuario";
+      $resultado = $conn->query($consulta);
+
+      if ($resultado->num_rows > 0) {
+        // Mostrar opciones para cada nombre de usuario
+        while ($fila = $resultado->fetch_assoc()) {
+          echo "<option value='" . $fila['NombreUsuario'] . "'>" . $fila['NombreUsuario'] . "</option>";
+        }
+      }
+
+     
+      ?>
+    </select>
+              </div>
+              <div class="form-group">
+                <label for="nuevaContraseña">Contraseña:</label>
+                <input type="password" class="form-control" id="nuevaContraseña" name="nuevaContraseña" required>
+              </div>
+
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function agregarUsuario() {
+     
+      var nuevoID = document.getElementById('nuevoID').value;
+      var nuevoNombreUsuario = document.getElementById('nuevoNombreUsuario').value;
+      var nuevaContraseña = document.getElementById('nuevaContraseña').value;
+      var nuevoActivo = document.getElementById('nuevoActivo').value;
+
+      
+      if (nuevoID && nuevoNombreUsuario && nuevaContraseña && nuevoActivo) {
+       
+        var nuevaFila = document.createElement('tr');
+        nuevaFila.innerHTML = `<td>${nuevoID}</td><td>${nuevoNombreUsuario}</td><td>${nuevaContraseña}</td><td>${nuevoActivo}</td>`;
+
+      
+        var tablaAdmin = document.getElementById('adminTableBody');
+        tablaAdmin.appendChild(nuevaFila);
+
+       
+        $('#myModal').modal('hide');
+      } else {
+        alert('Por favor, completa todos los campos.');
+      }
+    }
+  </script>
             </div>
 
           
@@ -280,7 +355,7 @@ John Abraham</h5>
                                 <div class="table-responsive">
                                 <?php
 
-include '../conex.php';
+
 
 
 if ($conn->connect_error) {
