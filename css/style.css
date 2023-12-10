@@ -212,11 +212,35 @@ p {
     background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
 }
 
-/* Media query para pantallas más pequeñas, por ejemplo, 768px o menos */
 @media (max-width: 768px) {
     #contenedorprimario {
-        height: 400px; /* Cambia la altura para pantallas más pequeñas */
-        width: 100%; /* Puede mantener el ancho al 100% o ajustarlo según tus necesidades */
+        height: 400px; 
+        width: 100%; 
         background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
     }
 }
+
+
+.ventana-emergente {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(100, 149, 237, 0.9); 
+    padding: 20px;
+    border-radius: 15px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.contenido-ventana {
+    text-align: center;
+    color: white; 
+}
+
+
+.ventana-emergente {
+    transition: all 0.3s ease;
+}
+
