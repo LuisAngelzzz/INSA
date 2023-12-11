@@ -21,25 +21,31 @@ include('conex.php');
 $error_message = ""; // Variable para almacenar el mensaje de error
 
 if(isset($_POST['login'])) {
-    $email = $_POST['Nombre'];
-    $password = $_POST['password'];
+    $email = $_POST['NombreUsuario'];
+    $password = $_POST['contraseña'];
 
-    $query = "SELECT * FROM usuarios WHERE Nombre = '$email' AND password = '$password'";
+    $query = "SELECT * FROM infousuario WHERE NombreUsuario = '$email' AND contraseña = '$password'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
 
 
-    if(mysqli_num_rows($result) == 1 && $row['privilegio'] == 2) {
+    if(mysqli_num_rows($result) == 1 && $row['privilegio'] == 0) {
         // Inicio de sesión exitoso
-        header('Location: superadmin/index.php');
+        header('Location: superadmin/superAdmin.php');
     }
     elseif (mysqli_num_rows($result) == 1 && $row['privilegio'] == 1) {
         // Inicio de sesión exitoso
-        header('Location: boceto.php');
+        header('Location: superadmin/admin.php');
+        
     }
-    elseif (mysqli_num_rows($result) == 1 && $row['privilegio'] == 0) {
+    elseif (mysqli_num_rows($result) == 1 && $row['privilegio'] == 2) {
         // Inicio de sesión exitoso
-        header('Location: usuario.php');
+        header('Location: superadmin/gerente.php');
+        
+    }
+    elseif (mysqli_num_rows($result) == 1 && $row['privilegio'] == 3) {
+        // Inicio de sesión exitoso
+        header('Location: superadmin/vendedor.php');
     }
     else {
         // Error de inicio de sesión
@@ -89,13 +95,13 @@ if(isset($_POST['login'])) {
                 <br><br>
                 <img src="img/logo.png" class="logoI">
                 <br>
-                <label>Tu partner perfecto para el alquiler de tu casa</label>
-                <h2>Iniciar Sesión</h2>
+                <label>Tu partner perfecto para el alquiler de tu casa.</label>
+                <h2>Inicia sesión con tus datos proporcionados. </h2>
                 <form method="post" action="login.php">
-                    <label for="Nombre">Email</label>
-                    <input type="text" name="Nombre" id="Nombre" required><br>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required><br>
+                    <label for="NombreUsuario">Email</label>
+                    <input type="text" name="NombreUsuario" id="NombreUsuario" required><br>
+                    <label for="contraseña">Password</label>
+                    <input type="password" name="contraseña" id="contraseña" required><br>
                     <div class="horizontal-center">
 
                         <input type="checkbox" id="recuerdame">
@@ -104,8 +110,8 @@ if(isset($_POST['login'])) {
                     </div>
                     <div id="centrar1">
                         <input type="submit" name="login" value="Iniciar Sesión">
-                        <input type="submit" name="login" value="Registrarse">
                     </div>
+                    <!-- Se Omite en este caso por inicio unico
                     <div id="centrar">
                         <label>O inicia sesión con:</label>
                         <a href="fb.com">
@@ -118,6 +124,7 @@ if(isset($_POST['login'])) {
                             <img src="img/google.png" width="50" height="50">
                         </a>
                     </div>
+                    -->
                 </form>
             </div>
         </div>

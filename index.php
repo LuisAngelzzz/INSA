@@ -8,7 +8,8 @@ $conn = mysqli_connect($host,$user,$clave,$bd);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-
+/*
+LA OMITO POR LOS ERRORES DE VENDEDOR SE CHECARA ESTA PARTE
 // Consulta para obtener datos de los vendedores
 $sql = "SELECT nombreUsuario, activo FROM vendedor";
 $result = $conn->query($sql);
@@ -27,7 +28,7 @@ if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
         echo '<tr>';
-        echo '<td>' . $row["nombre"] . '</td>';
+        echo '<td>' . $row["NombreUsuario"] . '</td>';
         echo '<td><a href="#" class="btn ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
         echo '<td><i class="fas fa-pencil-alt"></i> Editar</td>';
         echo '</tr>';
@@ -48,8 +49,8 @@ if ($result->num_rows > 0) {
 
 // Cierra la conexión
 $conn->close();
+*/
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
