@@ -18,7 +18,7 @@ $nuevoNombreUsuario = $_POST['nuevoNombreUsuario'];
 $nuevaContraseña = $_POST['nuevaContraseña'];
 
 
-$sql = "INSERT INTO admin ( NombreUsuario, password) VALUES ('$nuevoNombreUsuario', '$nuevaContraseña')";
+$sql = "INSERT INTO infousuario ( NombreUsuario, contraseña, privilegio) VALUES ('$nuevoNombreUsuario', '$nuevaContraseña', '1')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Usuario agregado correctamente";

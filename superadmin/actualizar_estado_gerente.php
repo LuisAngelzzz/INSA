@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nombre"]) && isset($_P
     $activo = $_POST["activo"];
 
     // Realiza la actualización en la base de datos (ajusta según tu estructura)
-    $sql_update = "UPDATE gerente SET activo = $activo WHERE nombreUsuario = '$nombre'";
+    $sql_update = "UPDATE infousuario SET activo = $activo WHERE nombreUsuario = '$nombre'";
 
     if ($conn->query($sql_update) === TRUE) {
         echo $activo; // Devuelve el nuevo estado para que el JavaScript lo refleje

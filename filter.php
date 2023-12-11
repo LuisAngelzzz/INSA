@@ -159,9 +159,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<div class="producto" data-habitacion-piso="' . $producto['habitacion_piso'] . '" data-ubicacion="' . $producto['ubicacion'] . '" data-caracteristicas="' . $producto['caracteristicas'] . '">';
                 echo '<a href="detalle_producto.php?id=' . $producto['id'] . '">';
                 echo '<img src="' . $producto['imagen'] . '" alt="Imagen del producto">';
-                echo '<h3>' . $producto['nombre'] . '</h3>';
-                echo '<h3>' . $producto['ubicacion'] . '</h3>';
-                echo '<h3>Precio: $' . $producto['precio'] . '</h3>';
+                echo '<h4>' . $producto['nombre'] . '</h4>';
+                echo '<h4>' . $producto['ubicacion'] . '</h4>';
+                echo '<h4>Precio: $' . $producto['precio'] . '</h4>';
                 echo '</a>';
                 echo '</div>';
                 $contador++;

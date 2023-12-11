@@ -353,7 +353,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombreUsuario, activo FROM admin";
+$sql = "SELECT nombreUsuario, activo FROM infousuario where privilegio = 1";
 
 
 $result = $conn->query($sql);
