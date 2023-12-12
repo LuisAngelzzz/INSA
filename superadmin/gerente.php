@@ -285,23 +285,13 @@ John Abraham</h5>
   
               <div class="form-group">
                 <label for="nuevoNombreUsuario">Nombre de Usuario:</label>
-                <select class="form-control" id="nuevoNombreUsuario" name="nuevoNombreUsuario" required>
+                <input type="text" class="form-control" id="nuevoNombreUsuario" name="nuevoNombreUsuario" required>
       <?php
     
     include '../conex.php';
       $consulta = "SELECT NombreUsuario FROM infousuario";
       $resultado = $conn->query($consulta);
-
-      if ($resultado->num_rows > 0) {
-        // Mostrar opciones para cada nombre de usuario
-        while ($fila = $resultado->fetch_assoc()) {
-          echo "<option value='" . $fila['NombreUsuario'] . "'>" . $fila['NombreUsuario'] . "</option>";
-        }
-      }
-
-     
       ?>
-    </select>
               </div>
               <div class="form-group">
                 <label for="nuevaContraseña">Contraseña:</label>

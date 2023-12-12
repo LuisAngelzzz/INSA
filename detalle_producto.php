@@ -6,15 +6,15 @@ $id_producto = isset($_GET['id']) ? $_GET['id'] : 0;
 
 // Obtener la información del producto específico
 $sql_detalle_producto = "SELECT * FROM productos WHERE id = $id_producto";
-$resultado_detalle_producto = mysqli_query($conectar, $sql_detalle_producto);
+$resultado_detalle_producto = mysqli_query($conn, $sql_detalle_producto);
 $producto_detalle = mysqli_fetch_assoc($resultado_detalle_producto);
 
 // Obtener los detalles correspondientes al producto
 $sql_detalles = "SELECT * FROM detalles WHERE id = $id_producto";
-$resultado_detalles = mysqli_query($conectar, $sql_detalles);
+$resultado_detalles = mysqli_query($conn, $sql_detalles);
 $detalles_producto = mysqli_fetch_assoc($resultado_detalles);
 
-mysqli_close($conectar);
+mysqli_close($conn);
 ?>
 
 
