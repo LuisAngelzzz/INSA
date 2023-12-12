@@ -327,8 +327,10 @@ if (isset($_POST['actualizar'])) {
                     <div class="fila">
                         <div class="box">
                             <label for="pais">Estado de la Propiedad</label>
-                            <select name="pais" id="" onchange="muestraselect(this.value)" class="input-entrada-texto">
-                            <option value="no">Seleccione uno...</option>
+                            <select name="pais" id="" class="input-entrada-texto">
+                            <option value="<?php echo $propiedad['titulo'] ?>"> <?php echo $propiedad['pais'] ?></option>
+                         
+                                                      
 
 <option value="Aguascalientes">Aguascalientes</option>
 <option value="Baja California">Baja California</option>

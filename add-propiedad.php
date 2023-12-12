@@ -51,7 +51,7 @@ if (isset($_POST['agregar'])) {
     $telefono_propietario = $_POST['telefono_propietario'];
 
     //armamos el query para insertar en la tabla propiedades
-    $query = "INSERT INTO propiedades (id, fecha_alta, titulo, descripcion, tipo, estado, ubicacion, habitaciones, banios, pisos, garage, dimensiones, precio, moneda,  url_foto_principal, pais, propietario, telefono_propietario)
+    $query = "INSERT INTO propiedades (id, fecha_alta, titulo, descripcion, estado, ubicacion, habitaciones, banios, pisos, garage, dimensiones, precio, moneda,  url_foto_principal, pais, propietario, telefono_propietario)
     VALUES (NULL,CURRENT_TIMESTAMP, '$titulo', '$descripcion','$estado','$ubicacion','$habitaciones','$banios','$pisos','$garage','$dimensiones','$precio', '$moneda', '', '$pais','$propietario','$telefono_propietario')";
 
     //insertamos en la tabla propiedades
@@ -218,7 +218,7 @@ if (isset($_POST['agregar'])) {
                     <div class="fila">
                         <div class="box">
                             <label for="pais">Seleccione Estado  de la Propiedad</label>
-                            <select name="pais" id="" onchange="muestraselect(this.value)" class="input-entrada-texto">
+                            <select name="pais" id="pais" class="input-entrada-texto">
                             <option value="no">Seleccione uno...</option>
 
       <option value="Aguascalientes">Aguascalientes</option>
