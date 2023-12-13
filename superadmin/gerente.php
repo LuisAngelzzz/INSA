@@ -283,16 +283,21 @@ John Abraham</h5>
 
           <form id="formularioNuevoUsuario" action="insert_vendedor.php" method="POST">
   
-              <div class="form-group">
+            <div class="form-group">
                 <label for="nuevoNombreUsuario">Nombre de Usuario:</label>
                 <input type="text" class="form-control" id="nuevoNombreUsuario" name="nuevoNombreUsuario" required>
+            </div>
+            <div class="form-group">
+                <label for="nuevoEmail">Correo:</label>
+                <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmail" required>
+            </div>
       <?php
     
     include '../conex.php';
       $consulta = "SELECT NombreUsuario FROM infousuario";
       $resultado = $conn->query($consulta);
       ?>
-              </div>
+              
               <div class="form-group">
                 <label for="nuevaContraseña">Contraseña:</label>
                 <input type="password" class="form-control" id="nuevaContraseña" name="nuevaContraseña" required>
@@ -314,6 +319,7 @@ John Abraham</h5>
      
       var nuevoID = document.getElementById('nuevoID').value;
       var nuevoNombreUsuario = document.getElementById('nuevoNombreUsuario').value;
+      var nuevoEamil = document.getElementById('nuevoEmail').value;
       var nuevaContraseña = document.getElementById('nuevaContraseña').value;
       var nuevoActivo = document.getElementById('nuevoActivo').value;
 
@@ -321,7 +327,7 @@ John Abraham</h5>
       if (nuevoID && nuevoNombreUsuario && nuevaContraseña && nuevoActivo) {
        
         var nuevaFila = document.createElement('tr');
-        nuevaFila.innerHTML = `<td>${nuevoID}</td><td>${nuevoNombreUsuario}</td><td>${nuevaContraseña}</td><td>${nuevoActivo}</td>`;
+        nuevaFila.innerHTML = `<td>${nuevoID}</td><td>${nuevoNombreUsuario}</td><td>${nuevoEmail}</td><td>${nuevaContraseña}</td><td>${nuevoActivo}</td>`;
 
       
         var tablaAdmin = document.getElementById('adminTableBody');
@@ -352,7 +358,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombreUsuario, activo FROM infousuario where privilegio = 3";
+$sql = "SELECT nombreUsuario, email ,activo FROM infousuario where privilegio = 3";
 
 
 $result = $conn->query($sql);
@@ -401,6 +407,7 @@ $(document).ready(function() {
         echo '<thead>';
         echo '<tr>';
         echo '<th>Nombre</th>';
+        echo '<th>Email</th>';
         echo '<th>Activo</th>';
         echo '<th>Accion</th>';
         echo '</tr>';
@@ -410,6 +417,7 @@ $(document).ready(function() {
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $row["nombreUsuario"] . '</td>';
+            echo '<td>' . $row["email"] . '</td>';
             echo '<td><a href="#" class="btn btn-activo ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
             echo '<td><i class="fas fa-pencil-alt"></i> Editar</td>';
             echo '</tr>';
@@ -419,6 +427,7 @@ $(document).ready(function() {
         echo '<tfoot>';
         echo '<tr>';
         echo '<th>Nombre</th>';
+        echo '<th>Email</th>';
         echo '<th>Activo</th>';
         echo '<th>Accion</th>';
         echo '</tr>';

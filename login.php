@@ -21,31 +21,45 @@ include('conex.php');
 $error_message = ""; // Variable para almacenar el mensaje de error
 
 if(isset($_POST['login'])) {
-    $email = $_POST['NombreUsuario'];
+    $email = $_POST['email'];
     $password = $_POST['contraseña'];
 
-    $query = "SELECT * FROM infousuario WHERE NombreUsuario = '$email' AND contraseña = '$password'";
+    $query = "SELECT * FROM infousuario WHERE email = '$email' AND contraseña = '$password'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
 
 
-    if(mysqli_num_rows($result) == 1 && $row['privilegio'] == 0) {
+    if(mysqli_num_rows($result) == 1 && $row['privilegio'] == 0 and $row['activo']== 0) {
+        // Inicio de sesión exitoso
+        $error_message = "Su cuenta no esta activa.";
+    }
+    elseif (mysqli_num_rows($result) == 1 and $row['privilegio'] == 0 and $row['activo']== 1) {
         // Inicio de sesión exitoso
         header('Location: superadmin/superAdmin.php');
     }
-    elseif (mysqli_num_rows($result) == 1 && $row['privilegio'] == 1) {
+    else if(mysqli_num_rows($result) == 1 && $row['privilegio'] == 1 and $row['activo']== 0) {
+        // Inicio de sesión exitoso
+        $error_message = "Su cuenta no esta activa.";
+    }
+    elseif (mysqli_num_rows($result) == 1 and $row['privilegio'] == 1 and $row['activo']== 1) {
         // Inicio de sesión exitoso
         header('Location: superadmin/admin.php');
-        
     }
-    elseif (mysqli_num_rows($result) == 1 && $row['privilegio'] == 2) {
+    else if(mysqli_num_rows($result) == 1 && $row['privilegio'] == 2 and $row['activo']== 0) {
+        // Inicio de sesión exitoso
+        $error_message = "Su cuenta no esta activa.";
+    }
+    elseif (mysqli_num_rows($result) == 1 and $row['privilegio'] == 2 and $row['activo']== 1) {
         // Inicio de sesión exitoso
         header('Location: superadmin/gerente.php');
-        
     }
-    elseif (mysqli_num_rows($result) == 1 && $row['privilegio'] == 3) {
+    else if(mysqli_num_rows($result) == 1 && $row['privilegio'] == 3 and $row['activo']== 0) {
         // Inicio de sesión exitoso
-        header('Location: superadmin/vendedor.php');
+        $error_message = "Su cuenta no esta activa.";
+    }
+    elseif (mysqli_num_rows($result) == 1 and $row['privilegio'] == 3 and $row['activo']== 1) {
+        // Inicio de sesión exitoso
+        header('Location: indexvendedor.php');
     }
     else {
         // Error de inicio de sesión
@@ -98,8 +112,8 @@ if(isset($_POST['login'])) {
                 <label>Tu partner perfecto para el alquiler de tu casa.</label>
                 <h2>Inicia sesión con tus datos proporcionados. </h2>
                 <form method="post" action="login.php">
-                    <label for="NombreUsuario">Email</label>
-                    <input type="text" name="NombreUsuario" id="NombreUsuario" required><br>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" required><br>
                     <label for="contraseña">Password</label>
                     <input type="password" name="contraseña" id="contraseña" required><br>
                     <div class="horizontal-center">
