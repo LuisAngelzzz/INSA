@@ -16,9 +16,10 @@ if ($conn->connect_error) {
 
 $nuevoNombreUsuario = $_POST['nuevoNombreUsuario'];
 $nuevaContraseña = $_POST['nuevaContraseña'];
+$nuevoEmail = $_POST['nuevoEmail'];
 
 
-$sql = "INSERT INTO infousuario ( NombreUsuario, contraseña, privilegio) VALUES ('$nuevoNombreUsuario', '$nuevaContraseña', '3')";
+$sql = "INSERT INTO infousuario ( NombreUsuario, email ,contraseña, privilegio) VALUES ('$nuevoNombreUsuario', '$nuevoEmail','$nuevaContraseña', '3')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Usuario agregado correctamente";

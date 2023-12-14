@@ -292,6 +292,10 @@ John Abraham</h5>
                 <input type="text" class="form-control" id="nuevoNombreUsuario" name="nuevoNombreUsuario" required>
               </div>
               <div class="form-group">
+                <label for="nuevoEmail">Correo:</label>
+                <input type="text" class="form-control" id="nuevoEmail" name="nuevoEmail" required>
+              </div>
+              <div class="form-group">
                 <label for="nuevaContraseña">Contraseña:</label>
                 <input type="password" class="form-control" id="nuevaContraseña" name="nuevaContraseña" required>
               </div>
@@ -312,6 +316,7 @@ John Abraham</h5>
       // Obtener valores del formulario
       var nuevoID = document.getElementById('nuevoID').value;
       var nuevoNombreUsuario = document.getElementById('nuevoNombreUsuario').value;
+      var nuevoEmail = document.getElementById('nuevoEmail').value;
       var nuevaContraseña = document.getElementById('nuevaContraseña').value;
       var nuevoActivo = document.getElementById('nuevoActivo').value;
 
@@ -319,7 +324,7 @@ John Abraham</h5>
       if (nuevoID && nuevoNombreUsuario && nuevaContraseña && nuevoActivo) {
         // Crear una fila HTML con los datos del nuevo usuario
         var nuevaFila = document.createElement('tr');
-        nuevaFila.innerHTML = `<td>${nuevoID}</td><td>${nuevoNombreUsuario}</td><td>${nuevaContraseña}</td><td>${nuevoActivo}</td>`;
+        nuevaFila.innerHTML = `<td>${nuevoID}</td><td>${nuevoNombreUsuario}</td><td>${nuevoEmail}</td><td>${nuevaContraseña}</td><td>${nuevoActivo}</td>`;
 
         // Agregar la nueva fila a la tabla
         var tablaAdmin = document.getElementById('adminTableBody');
@@ -350,7 +355,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombreUsuario, activo FROM infousuario where privilegio = 2";
+$sql = "SELECT nombreUsuario, email ,activo FROM infousuario where privilegio = 2";
 
 
 $result = $conn->query($sql);
@@ -399,6 +404,7 @@ $(document).ready(function() {
         echo '<thead>';
         echo '<tr>';
         echo '<th>Nombre</th>';
+        echo '<th>Email</th>';
         echo '<th>Activo</th>';
         echo '<th>Accion</th>';
         echo '</tr>';
@@ -408,6 +414,7 @@ $(document).ready(function() {
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td>' . $row["nombreUsuario"] . '</td>';
+            echo '<td>' . $row["email"] . '</td>';
             echo '<td><a href="#" class="btn btn-activo ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
             echo '<td><i class="fas fa-pencil-alt"></i> Editar</td>';
             echo '</tr>';
@@ -417,6 +424,7 @@ $(document).ready(function() {
         echo '<tfoot>';
         echo '<tr>';
         echo '<th>Nombre</th>';
+        echo '<th>Email</th>';
         echo '<th>Activo</th>';
         echo '<th>Accion</th>';
         echo '</tr>';
