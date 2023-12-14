@@ -10,12 +10,20 @@
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="ruta/a/tu/jquery/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/libs/css/style.css">
     <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.6/dist/sweetalert2.min.css">
+
+<!-- jQuery (requerido para SweetAlert2) -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.6/dist/sweetalert2.min.js"></script>
   
 
     
@@ -353,7 +361,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombreUsuario, activo FROM infousuario where privilegio = 1";
+$sql = "SELECT nombreUsuario, activo, contraseña, id FROM infousuario where privilegio = 1";
 
 
 $result = $conn->query($sql);
@@ -412,9 +420,60 @@ $(document).ready(function() {
             echo '<tr>';
             echo '<td>' . $row["nombreUsuario"] . '</td>';
             echo '<td><a href="#" class="btn btn-activo ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
-            echo '<td><i class="fas fa-pencil-alt"></i> Editar</td>';
+            echo '<td><a href="#" onclick="editarUsuario(' . $row["id"] . ', \'' . $row["nombreUsuario"] . '\', \'' . $row["contraseña"] . '\')"><i class="fas fa-pencil-alt"></i> Editar</a></td>';
+
             echo '</tr>';
         }
+        
+        
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.6/dist/sweetalert2.all.min.js"></script>';
+        echo '<script>
+        function editarUsuario(id, nombreUsuario, contraseña) {
+            console.log("Función editarUsuario ejecutada con id:", id);
+            Swal.fire({
+                title: "Editar Usuario",
+                html:
+                    "<label for=\'editNombreUsuario\'>Nombre de Usuario:</label>" +
+                    "<input type=\'text\' id=\'editNombreUsuario\' class=\'form-control\' value=\'" + nombreUsuario + "\'>" +
+                    "<label for=\'editContrasena\'>Contraseña:</label>" +
+                    "<input type=\'password\' id=\'editContrasena\' class=\'form-control\' value=\'" + contraseña + "\'>",
+                focusConfirm: false,
+                preConfirm: () => {
+                    // Obtiene los valores actualizados del formulario dentro de SweetAlert2
+                    var nuevoNombreUsuario = document.getElementById("editNombreUsuario").value;
+                    var nuevaContrasena = document.getElementById("editContrasena").value;
+    
+                    // Realiza una solicitud AJAX al servidor para actualizar los datos
+                    $.ajax({
+                        type: "POST",
+                        url: "actualizar_usuario.php", // Ruta al script PHP que maneja la actualización
+                        data: {
+                            id: id, // Agrega el parámetro id
+                            nombreUsuario: nuevoNombreUsuario,
+                            contraseña: nuevaContrasena,
+                        },
+                        success: function(response) {
+                            // Muestra una alerta con el resultado de la actualización
+                            Swal.fire({
+                                icon: "success",
+                                title: "Guardado Exitoso",
+                                text: response,
+                            });
+                        },
+                        error: function(error) {
+                            // Muestra una alerta en caso de error
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error",
+                                text: "Ocurrió un error al actualizar los datos.",
+                            });
+                        }
+                    });
+                },
+            });
+        }
+    </script>';
+    
 
         echo '</tbody>';
         echo '<tfoot>';
@@ -475,6 +534,9 @@ $(document).ready(function() {
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
     <script src="assets/libs/js/main-js.js"></script>
+
+  
+  
 </body>
  
 </html>
