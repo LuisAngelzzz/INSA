@@ -14,12 +14,13 @@ if ($conn->connect_error) {
 
 $id = $_POST['id'];
 $nuevoNombreUsuario = $_POST['nombreUsuario'];
+$nuevoEmail = $_POST['email'];
 $nuevaContrasena = $_POST['contraseña'];
 
 // Validar y procesar los datos (aquí deberías implementar tus propias validaciones)
 
 // Actualizar la base de datos
-$sql = "UPDATE infoUsuario SET nombreUsuario = '$nuevoNombreUsuario', contraseña = '$nuevaContrasena' WHERE id = $id";
+$sql = "UPDATE infoUsuario SET nombreUsuario = '$nuevoNombreUsuario', email = '$nuevoEmail' , contraseña = '$nuevaContrasena' WHERE id = $id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Datos actualizados correctamente";

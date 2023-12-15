@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Gerente</title>
+    <title>Propiedades</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -148,12 +148,12 @@ John Abraham</h5>
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="index.html" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Centro</a>
-                                            <div id="submenu-1-2" class="collapse submenu" style="">
+                                            <a class="nav-link" href="gerente.php"  aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Centro</a>
+                                            <div id="submenu-1-2"  style="">
                                                 <ul class="nav flex-column">
                                                     
                                                 </ul>
@@ -165,7 +165,7 @@ John Abraham</h5>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="casas.php" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fab fa-fw fa-wpforms"></i>Propiedades</a>
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fab fa-fw fa-wpforms"></i>Propiedades</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         
@@ -255,13 +255,13 @@ John Abraham</h5>
                         </div>
                     </div>
                 </div>
-          
+           <!--
                 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
       <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nuevo</a>
     </div>
   </div>
-
+-->
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -339,7 +339,7 @@ John Abraham</h5>
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Vendedores</h5>
+                            <h5 class="card-header">Propiedades</h5>
                             <div class="card-body">
                                 <div class="table-responsive">
                                 <?php
@@ -351,7 +351,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombreUsuario, email ,activo FROM infousuario where privilegio = 3";
+$sql = "SELECT * FROM propiedades";
 
 
 $result = $conn->query($sql);
@@ -370,13 +370,13 @@ $(document).ready(function() {
         e.preventDefault();
 
         var row = $(this).closest("tr");
-        var nombre = row.find("td:first").text();
+        var titulo = row.find("td:first").text();
         var activo = (row.find(".btn-activo").text() === "Activo") ? 0 : 1;
 
         $.ajax({
             type: "POST",
-            url: "actualizar_estado.php",
-            data: { nombre: nombre, activo: activo },
+            url: "actualizar_estado_casa.php",
+            data: { titulo: titulo, activo: activo },
             success: function(response) {
                 if (response == 1) {
                     row.find(".btn-activo").text("Activo").removeClass("btn-danger").addClass("btn-success");
@@ -399,8 +399,8 @@ $(document).ready(function() {
         echo '<table class="table table-striped table-bordered first">';
         echo '<thead>';
         echo '<tr>';
-        echo '<th>Nombre</th>';
-        echo '<th>Email</th>';
+        echo '<th>Titulo</th>';
+        echo '<th>Descripcion</th>';
         echo '<th>Activo</th>';
         echo '<th>Accion</th>';
         echo '</tr>';
@@ -409,8 +409,8 @@ $(document).ready(function() {
 
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
-            echo '<td>' . $row["nombreUsuario"] . '</td>';
-            echo '<td>' . $row["email"] . '</td>';
+            echo '<td>' . $row["titulo"] . '</td>';
+            echo '<td>' . $row["descripcion"] . '</td>';
             echo '<td><a href="#" class="btn btn-activo ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
             echo '<td><i class="fas fa-pencil-alt"></i> Editar</td>';
             echo '</tr>';
@@ -419,15 +419,15 @@ $(document).ready(function() {
         echo '</tbody>';
         echo '<tfoot>';
         echo '<tr>';
-        echo '<th>Nombre</th>';
-        echo '<th>Email</th>';
+        echo '<th>Titulo</th>';
+        echo '<th>Descripcion</th>';
         echo '<th>Activo</th>';
         echo '<th>Accion</th>';
         echo '</tr>';
         echo '</tfoot>';
         echo '</table>';
     } else {
-        echo "No hay vendedores en la base de datos";
+        echo "No hay propiedades en la base de datos";
     }
 
     $conn->close();

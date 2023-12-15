@@ -366,11 +366,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-<<<<<<< HEAD
-$sql = "SELECT nombreUsuario, activo, contraseña, id FROM infousuario where privilegio = 1";
-=======
-$sql = "SELECT nombreUsuario, email ,activo FROM infousuario where privilegio = 1";
->>>>>>> eaa8a36cb4407c6396dd939d4d453b0122bfa5ee
+$sql = "SELECT id, nombreUsuario, email ,activo, contraseña FROM infousuario where privilegio = 1";
 
 
 $result = $conn->query($sql);
@@ -431,7 +427,9 @@ $(document).ready(function() {
             echo '<td>' . $row["nombreUsuario"] . '</td>';
             echo '<td>' . $row["email"] . '</td>';
             echo '<td><a href="#" class="btn btn-activo ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
-            echo '<td><a href="#" onclick="editarUsuario(' . $row["id"] . ', \'' . $row["nombreUsuario"] . '\', \'' . $row["contraseña"] . '\')"><i class="fas fa-pencil-alt"></i> Editar</a></td>';
+            echo '<td><a href="#" onclick="editarUsuario(' . $row["id"] . ', \'' . $row["nombreUsuario"] . '\', \'' . $row["email"] . '\',  \'' . $row["contraseña"] . '\')"><i class="fas fa-pencil-alt"></i> Editar</a></td>';
+
+
 
             echo '</tr>';
         }
@@ -439,20 +437,24 @@ $(document).ready(function() {
         
         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.6/dist/sweetalert2.all.min.js"></script>';
         echo '<script>
-        function editarUsuario(id, nombreUsuario, contraseña) {
+        function editarUsuario(id, nombreUsuario, email, contraseña) {
             console.log("Función editarUsuario ejecutada con id:", id);
             Swal.fire({
                 title: "Editar Usuario",
                 html:
                     "<label for=\'editNombreUsuario\'>Nombre de Usuario:</label>" +
                     "<input type=\'text\' id=\'editNombreUsuario\' class=\'form-control\' value=\'" + nombreUsuario + "\'>" +
+                    "<label for=\'editEmail\'>Email:</label>" +
+                    "<input type=\'text\' id=\'editEmail\' class=\'form-control\' value=\'" + email + "\'>" +
                     "<label for=\'editContrasena\'>Contraseña:</label>" +
                     "<input type=\'password\' id=\'editContrasena\' class=\'form-control\' value=\'" + contraseña + "\'>",
                 focusConfirm: false,
                 preConfirm: () => {
                     // Obtiene los valores actualizados del formulario dentro de SweetAlert2
                     var nuevoNombreUsuario = document.getElementById("editNombreUsuario").value;
+                    var nuevoEmail = document.getElementById("editEmail").value;
                     var nuevaContrasena = document.getElementById("editContrasena").value;
+                    
     
                     // Realiza una solicitud AJAX al servidor para actualizar los datos
                     $.ajax({
@@ -461,6 +463,7 @@ $(document).ready(function() {
                         data: {
                             id: id, // Agrega el parámetro id
                             nombreUsuario: nuevoNombreUsuario,
+                            email: nuevoEmail,
                             contraseña: nuevaContrasena,
                         },
                         success: function(response) {

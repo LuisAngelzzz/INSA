@@ -46,13 +46,15 @@ if (isset($_POST['agregar'])) {
     $url_foto_principal = "url";
     $url_galeria = "url";
     $pais = $_POST['pais'];
+ 
 
     $propietario = $_POST['nombre_propietario'];
     $telefono_propietario = $_POST['telefono_propietario'];
+    $activo = $_POST['activo'];
 
     //armamos el query para insertar en la tabla propiedades
-    $query = "INSERT INTO propiedades (id, fecha_alta, titulo, descripcion, estado, ubicacion, habitaciones, banios, pisos, garage, dimensiones, precio, moneda,  url_foto_principal, pais, propietario, telefono_propietario)
-    VALUES (NULL,CURRENT_TIMESTAMP, '$titulo', '$descripcion','$estado','$ubicacion','$habitaciones','$banios','$pisos','$garage','$dimensiones','$precio', '$moneda', '', '$pais','$propietario','$telefono_propietario')";
+    $query = "INSERT INTO propiedades (id, fecha_alta, titulo, descripcion, estado, ubicacion, habitaciones, banios, pisos, garage, dimensiones, precio, moneda,  url_foto_principal, pais, propietario, telefono_propietario, activo)
+    VALUES (NULL,CURRENT_TIMESTAMP, '$titulo', '$descripcion','$estado','$ubicacion','$habitaciones','$banios','$pisos','$garage','$dimensiones','$precio', '$moneda', '', '$pais','$propietario','$telefono_propietario' , '$activo')";
 
     //insertamos en la tabla propiedades
     if (mysqli_query($conn, $query)) { //Se insertó correctamente
@@ -264,12 +266,17 @@ if (isset($_POST['agregar'])) {
                             <input type="text" name="nombre_propietario" class="input-entrada-texto">
                         </div>
 
+
                     </div>
                     <div class="fila">
                         <div class="box">
                             <label for="telefono_propietario">Teléfono del propietario</label>
-                            <input type="text" name="telefono_propietario" class="input-entrada-texto">
+                            <input type="text" name="telefono_propietario" class="input-entrada-texto" >
                         </div>
+                    </div>
+                    <div style="visibility: hidden;">
+                        
+                        <input type="text" name="activo" class="input-entrada-texto" value="0">
                     </div>
                     <hr>
                     <input type="submit" value="Agregar Propiedad" name="agregar" class="btn-accion">
