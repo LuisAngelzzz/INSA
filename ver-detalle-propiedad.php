@@ -93,8 +93,8 @@ function obtenerPais($id_pais)
                       
 
                         <tr>
-                            <td>Elija estado de la propiedad</label></td>
-                            <td> <?php echo $propiedad['estado'] ?> </td>
+                            <td>Elija el tipo de la propiedad</label></td>
+                            <td> <?php echo $propiedad['tipo'] ?> </td>
                         </tr>
 
                         <tr>
@@ -130,7 +130,7 @@ function obtenerPais($id_pais)
 
                         <tr>
                             <td>Precio (Alquiler o Venta)</td>
-                            <td> <?php echo $propiedad['moneda'] ." ". $propiedad['precio'] ?> </td>
+                            <td> <?php echo  "$" . $propiedad['precio'] ?> </td>
                         </tr>
                     </table>
                 </div>
@@ -162,8 +162,8 @@ function obtenerPais($id_pais)
 
                     <table class="descripcion">
                         <tr class="fila">
-                            <td><label for="pais">Estado</td>
-                            <td> <?php echo $propiedad['pais']?> </td>
+                            <td><label for="estado">Estado</td>
+                            <td> <?php echo $propiedad['estado']?> </td>
                         </tr>
                        
 

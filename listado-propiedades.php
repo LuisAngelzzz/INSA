@@ -66,7 +66,7 @@ $result = obtenerTodasLasPropiedades();
                             <tr>
                                 <td> <?php echo $propiedad['id'] ?></td>
                                 <td> <?php echo $propiedad['titulo'] ?></td>
-                                <td> <?php echo obtenerTipo($propiedad['tipo']) ?></td>
+                                <td> <?php echo $propiedad['tipo'] ?></td>
                                 <td> <?php echo $propiedad['estado'] ?></td>
                                 <td> <?php echo $propiedad['ubicacion'] ?></td>
                                 <td> <?php echo $propiedad['fecha_alta'] ?></td>

@@ -5,21 +5,21 @@ $productos = []; // Un array para almacenar los resultados
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $busqueda = isset($_POST['busqueda']) ? $_POST['busqueda'] : '';
-    $venta = isset($_POST['tipoperacion']) ? $_POST['tipoperacion'] : '';
-    $ubicacion = isset($_POST['ubicacion']) ? $_POST['ubicacion'] : '';
+    $venta = isset($_POST['tipo']) ? $_POST['tipo'] : '';
+    $ubicacion = isset($_POST['estado']) ? $_POST['estado'] : '';
     $precio = isset($_POST['precio']) ? $_POST['precio'] : 50;
     $orden = isset($_POST['orden']) ? $_POST['orden'] : 'mas_caro';
 
     // Construir la consulta SQL según los filtros seleccionados
-    $sql = "SELECT * FROM productos ";
-    $sql .= "WHERE ubicacion LIKE '%$busqueda%' ";
+    $sql = "SELECT * FROM propiedades ";
+    $sql .= "WHERE ubicacion LIKE '%$busqueda%' AND activo = 1 ";
 
     if ($venta != '') {
-        $sql .= "AND tipoperacion = '$venta' ";
+        $sql .= "AND tipo = '$venta' ";
     }
 
     if ($ubicacion != '') {
-        $sql .= "AND ubicacion = '$ubicacion' ";
+        $sql .= "AND estado = '$ubicacion' ";
     }
 
     if ($orden == 'Más caro') {
@@ -62,12 +62,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <nav>
         <img src="img/LOGO_INSA.png" class="logo">
         <ul>
-            <li><a href="index.php">Inicio</a></li>
-            <li><a href="index.php">compra</a></li>
-            <li><a href="index.php">renta</a></li>
-            <li><a href="index.php">conocenos</a></li>
+        <li><a href="index.php" style="color: black;">Inicio</a></li>
+            <li><a href="index.php" style="color: black;">compra</a></li>
+            <li><a href="index.php" style="color: black;">renta</a></li>
+            <li><a href="index.php" style="color: black;">conocenos</a></li>
         </ul>
-        <button class="btn"><img src="img/icon.png">Contactanos</button>
+        <button class="btn">Contactanos</button>
     </nav>
 
     <center>
@@ -83,8 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="container3">
-            <p for="tipoperacion">Venta:</p>
-            <select name="tipoperacion" id="tipoperacion">
+            <p for="tipo">Venta:</p>
+            <select name="tipo" id="tipo">
                 <?php if($venta != ''){ ?>
                 <option value="<?php echo $venta; ?>"><?php echo $venta; ?></option>
                 <?php } ?>
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
 
             <p for="ubicacion">Ubicación:</p>
-            <select name="ubicacion" id="ubicacion">
+            <select name="estado" id="estado">
                 <?php if($ubicacion != ''){ ?>
                 <option value="<?php echo $ubicacion; ?>"><?php echo $ubicacion; ?></option>
                 <?php } ?>
@@ -156,12 +156,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($contador % 3 == 0) {
                     echo '<div class="row">';
                 }
-                echo '<div class="producto" data-habitacion-piso="' . $producto['habitacion_piso'] . '" data-ubicacion="' . $producto['ubicacion'] . '" data-caracteristicas="' . $producto['caracteristicas'] . '">';
+                echo '<div class="producto" data-habitaciones="' . $producto['habitaciones'] . '" data-estado="' . $producto['estado'] . '" data-descripcion="' . $producto['descripcion'] . '">';
                 echo '<a href="detalle_producto.php?id=' . $producto['id'] . '">';
-                echo '<img src="' . $producto['imagen'] . '" alt="Imagen del producto">';
-                echo '<h3>' . $producto['nombre'] . '</h3>';
-                echo '<h3>' . $producto['ubicacion'] . '</h3>';
-                echo '<h3>Precio: $' . $producto['precio'] . '</h3>';
+                echo '<img src="' . $producto['url_foto_principal'] . '" alt="Imagen del producto">';
+                echo '<h3>' . $producto['titulo'] . '</h3>';
+                echo '<a>' . $producto['estado'] . '</a>';
+                echo '<p style="color: #darkblue";>' . $producto['precio'] . '$</p>';
                 echo '</a>';
                 echo '</div>';
                 $contador++;
@@ -202,11 +202,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     productos.forEach(function(producto) {
         producto.addEventListener('mouseenter', function(event) {
-            var habitacionPiso = this.getAttribute('data-habitacion-piso');
+            var habitacionPiso = this.getAttribute('data-habitaciones');
             var ubicacion = this.getAttribute('data-ubicacion');
             var caracteristicas = this.getAttribute('data-caracteristicas');
 
-            var info = 'Habitación-Piso: ' + habitacionPiso + '\nUbicación: ' + ubicacion;
+            var info = 'habitaciones: ' + habitacionPiso + '\nUbicación: ' + ubicacion;
 
             var rect = this.getBoundingClientRect();
             var x = rect.left + window.scrollX;

@@ -1,246 +1,253 @@
 
 body {
-   font-family: Arial, sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: auto;
-    color: #002587; /* Color de texto azul rey */
-}
-
-#contenedorprimario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 613px;
-    width: 91%; /* Ancho total de la ventana */
-    padding: 0px;
-    background: linear-gradient(to right, transparent 35%, #EFEFEF 25%); /* Gradiente lineal */
-}
-
-
-/* Codigo Pauuu */
-.container{
-    width: 300%;
-    min-height: 105vh;
-    background-image: linear-gradient(rgba(76, 109, 201, 0.65),rgba(175, 173, 189, 0.65));
-    background-size: cover;
-    background-position: center;
-    padding: 0px 8%;
-}
-
-nav{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-}
-
-.logo{
-    width: 180px;
-    cursor: pointer;
-}
-
-nav ul{
-    list-style: none;
-    width: 100%;
-    text-align: right;
-    padding-right: 60px;
-}
-
-nav ul li{
-    display: inline-block;
-    margin: 10px 20px;
-}
-
-nav ul li a{
-    color: #fff;
-    text-decoration: none;
-}
-
-.btn{
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border: 0;
-    outline: 0;
-    border-radius: 5px;
-    background: #0c1774;
-    color: #fff;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.btn img{
-    width: 20px;
-    margin-right: 10px;
-}
-/* Apartado Pauuu */
-
-#izquierdo {
-    flex: 1; 
-    padding: 0px;
-    max-width: 100%;
-    height: 100%
-}
-
-#derecho {
-    flex: 1; 
-    padding: 0px;
-    max-width: 100%;
-    height: 100%
-}
-
-.logoINSA {
-    flex: 1; 
-    max-width: 450px;
-    height: 100%;
-   
-}
-
-
-#logincontenedor {
-
-    height: 90%;
-    width: 100%;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-}
-
-.logoI {
-    height: 40px;
-    width: 20%;
+    font-family: Arial, sans-serif;
+     margin: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: auto;
+     color: #002587; /* Color de texto azul rey */
+ }
  
-}
-
-#centrar1 {
+ #contenedorprimario {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 613px;
+     width: 91%; /* Ancho total de la ventana */
+     padding: 0px;
+     background: linear-gradient(to right, transparent 35%, #EFEFEF 25%); /* Gradiente lineal */
+ }
+ 
+ 
+ /* Codigo Pauuu */
+ .container{
+     width: 300%;
+     min-height: 105vh;
+     background-image: linear-gradient(rgba(76, 109, 201, 0.65),rgba(175, 173, 189, 0.65));
+     background-size: cover;
+     background-position: center;
+     padding: 0px 8%;
+ }
+ 
+ nav{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px 0;
+ }
+ 
+ .logo{
+     width: 180px;
+     cursor: pointer;
+ }
+ 
+ nav ul{
+     list-style: none;
+     width: 100%;
+     text-align: right;
+     padding-right: 60px;
+ }
+ 
+ nav ul li{
+     display: inline-block;
+     margin: 10px 20px;
+ }
+ 
+ nav ul li a{
+     color: #fff;
+     text-decoration: none;
+ }
+ 
+ .btn{
+     display: flex;
+     align-items: center;
+     padding: 10px 20px;
+     border: 0;
+     outline: 0;
+     border-radius: 5px;
+     background: #0c1774;
+     color: #fff;
+     font-weight: 500;
+     cursor: pointer;
+ }
+ 
+ .btn img{
+     width: 20px;
+     margin-right: 10px;
+ }
+ /* Apartado Pauuu */
+ 
+ #izquierdo {
+     flex: 1; 
+     padding: 0px;
+     max-width: 100%;
+     height: 100%
+ }
+ 
+ #derecho {
+     flex: 1; 
+     padding: 0px;
+     max-width: 100%;
+     height: 100%
+ }
+ 
+ .logoINSA {
+     flex: 1; 
+     max-width: 450px;
+     height: 100%;
+    
+ }
+ 
+ 
+ #logincontenedor {
+ 
+     height: 90%;
+     width: 100%;
+     align-items: flex-start;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .logoI {
+     height: 40px;
+     width: 20%;
+  
+ }
+ 
+ #centrar1 {
+     display: flex; /* Convierte el contenido en un flex container */
+     align-items: center; /* Centra verticalmente el contenido */
+     justify-content: center; /* Centra horizontalmente el contenido */
+     text-align: center; /* Alinea el texto al centro */
+     margin: 20px;
+ }
+ 
+ #centrar1 > * {
+     margin: 10px; /* Puedes aplicar un margen a los elementos internos si lo deseas */
+ }
+ 
+ 
+ #centrar {
+     text-align: center;
+     margin: 20px; 
+ }
+ 
+ 
+ .horizontal-center {
     display: flex; /* Convierte el contenido en un flex container */
-    align-items: center; /* Centra verticalmente el contenido */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    text-align: center; /* Alinea el texto al centro */
-    margin: 20px;
-}
-
-#centrar1 > * {
-    margin: 10px; /* Puedes aplicar un margen a los elementos internos si lo deseas */
-}
-
-
-#centrar {
-    text-align: center;
-    margin: 20px; 
-}
-
-
-.horizontal-center {
-   display: flex; /* Convierte el contenido en un flex container */
-    align-items: center; /* Centra verticalmente el contenido */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    text-align: center; /* Alinea el texto al centro */
-  text-align: center;
-  margin:40px;
-}
-
-.horizontal-center input,
-.horizontal-center label,
-.horizontal-center a {
-  display: inline-block;
-  margin: 0 10px; 
-}
-.black-link {
-  color: black; 
-  display: block;
-  margin: 10px 0; 
-   text-decoration: underline;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-label {
-    align-items: flex-start;
-    display: block;
-    margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-a {
-    text-decoration: none;
-    color: #0073e6;
-}
-
-input[type="submit"] {
-    background-color: #E69600;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-input[type="submit"]:hover {
-    background-color: #005bad;
-}
-
-p {
-    margin-top: 20px;
-}
-
-/* para moviles */
-
-#contenedorprimario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 613px;
-    width: 91%;
-    padding: 0;
-    background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
-}
-
-@media (max-width: 768px) {
-    #contenedorprimario {
-        height: 400px; 
-        width: 100%; 
-        background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
-    }
-}
-
-
-.ventana-emergente {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(100, 149, 237, 0.9); 
-    padding: 20px;
-    border-radius: 15px; 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-.contenido-ventana {
-    text-align: center;
-    color: white; 
-}
-
-
-.ventana-emergente {
-    transition: all 0.3s ease;
-}
-
+     align-items: center; /* Centra verticalmente el contenido */
+     justify-content: center; /* Centra horizontalmente el contenido */
+     text-align: center; /* Alinea el texto al centro */
+   text-align: center;
+   margin:40px;
+ }
+ 
+ .horizontal-center input,
+ .horizontal-center label,
+ .horizontal-center a {
+   display: inline-block;
+   margin: 0 10px; 
+ }
+ .black-link {
+   color: black; 
+   display: block;
+   margin: 10px 0; 
+    text-decoration: underline;
+ }
+ 
+ h2 {
+     font-size: 24px;
+     margin-bottom: 20px;
+ }
+ 
+ label {
+     align-items: flex-start;
+     display: block;
+     margin-bottom: 10px;
+ }
+ 
+ input[type="text"],
+ input[type="password"] {
+     width: 80%;
+     padding: 10px;
+     margin-bottom: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+ }
+ 
+ a {
+     text-decoration: none;
+     color: #0073e6;
+ }
+ 
+ input[type="submit"] {
+     background-color: #E69600;
+     color: #fff;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 16px;
+ }
+ 
+ input[type="submit"]:hover {
+     background-color: #005bad;
+ }
+ 
+ p {
+     margin-top: 20px;
+ }
+ 
+ /* para moviles */
+ 
+ #contenedorprimario {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 613px;
+     width: 91%;
+     padding: 0;
+     background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
+ }
+ 
+ /* Media query para pantallas más pequeñas, por ejemplo, 768px o menos */
+ @media (max-width: 768px) {
+     #contenedorprimario {
+         height: 400px; /* Cambia la altura para pantallas más pequeñas */
+         width: 100%; /* Puede mantener el ancho al 100% o ajustarlo según tus necesidades */
+         background: linear-gradient(to right, transparent 35%, #EFEFEF 25%);
+     }
+ }
+ 
+ 
+ .ventana-emergente {
+     display: none;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-image: url('../img/estiloC.png'); 
+     background-color: #fab059;
+     background-size: cover;   
+     padding: 20px;
+     border-radius: 15px; /* Añadimos bordes redondeados */
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+     z-index: 999;
+ }
+ 
+ 
+ .contenido-ventana {
+     text-align: center;
+     color: white; /* Cambiamos el color del texto para que sea visible sobre el fondo semi-transparente */
+ }
+ 
+ .ventana-emergente {
+     /* ... tus estilos existentes ... */
+     position: absolute; /* Cambia de fixed a absolute */
+     transition: all 0.3s ease;
+ 
+ }
+ 
+ 

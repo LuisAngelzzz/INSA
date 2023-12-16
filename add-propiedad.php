@@ -34,7 +34,7 @@ if (isset($_POST['agregar'])) {
     //tomamos los datos que vienen del formulario
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
-    $estado = $_POST['estado'];
+    $tipo = $_POST['tipo'];
     $ubicacion = $_POST['ubicacion'];
     $habitaciones = $_POST['habitaciones'];
     $banios = $_POST['banios'];
@@ -42,19 +42,15 @@ if (isset($_POST['agregar'])) {
     $garage = $_POST['garage'];
     $dimensiones = $_POST['dimensiones'];
     $precio = $_POST['precio'];
-    $moneda = $_POST['moneda'];
     $url_foto_principal = "url";
     $url_galeria = "url";
-    $pais = $_POST['pais'];
- 
-
+    $estado = $_POST['estado'];
     $propietario = $_POST['nombre_propietario'];
     $telefono_propietario = $_POST['telefono_propietario'];
-    $activo = $_POST['activo'];
 
     //armamos el query para insertar en la tabla propiedades
-    $query = "INSERT INTO propiedades (id, fecha_alta, titulo, descripcion, estado, ubicacion, habitaciones, banios, pisos, garage, dimensiones, precio, moneda,  url_foto_principal, pais, propietario, telefono_propietario, activo)
-    VALUES (NULL,CURRENT_TIMESTAMP, '$titulo', '$descripcion','$estado','$ubicacion','$habitaciones','$banios','$pisos','$garage','$dimensiones','$precio', '$moneda', '', '$pais','$propietario','$telefono_propietario' , '$activo')";
+    $query = "INSERT INTO propiedades (id, fecha_alta, titulo, descripcion, tipo, ubicacion, habitaciones, banios, pisos, garage, dimensiones, precio,  url_foto_principal, estado, propietario, telefono_propietario, activo)
+    VALUES (NULL,CURRENT_TIMESTAMP, '$titulo', '$descripcion','$tipo','$ubicacion','$habitaciones','$banios','$pisos','$garage','$dimensiones','$precio', '', '$estado','$propietario','$telefono_propietario' , 0)";
 
     //insertamos en la tabla propiedades
     if (mysqli_query($conn, $query)) { //Se insertó correctamente
@@ -136,10 +132,10 @@ if (isset($_POST['agregar'])) {
                         
 
                         <div class="box">
-                            <label for="estado">Elija estado de la propiedad</label>
-                            <select name="estado" id="" class="input-entrada-texto">
-                                <option value="Venta">Renta</option>
-                                <option value="Alquiler">Venta</option>
+                            <label for="tipo">Elija estado de la propiedad</label>
+                            <select name="tipo" id="" class="input-entrada-texto">
+                                <option value="renta">Renta</option>
+                                <option value="venta">Venta</option>
                             </select>
                         </div>
 
@@ -185,14 +181,6 @@ if (isset($_POST['agregar'])) {
                             <input type="text" name="precio" class="input-entrada-texto" required>
                         </div>
                     </div>
-                    
-                    <div class="fila">
-                        <div class="box">
-                            <label for="moneda">Tipo de moneda</label>
-                            <input type="text" name="moneda" class="input-entrada-texto" required value="$">
-                        </div>
-                    </div>
-
 
                     <div>
                         <h2>Galería de fotos</h2>
@@ -219,10 +207,9 @@ if (isset($_POST['agregar'])) {
                     <h2>Ubicación y datos del Propietario</h2>
                     <div class="fila">
                         <div class="box">
-                            <label for="pais">Seleccione Estado  de la Propiedad</label>
-                            <select name="pais" id="pais" class="input-entrada-texto">
+                            <label for="estado">Seleccione Estado  de la Propiedad</label>
+                            <select name="estado" id="estado" class="input-entrada-texto">
                             <option value="no">Seleccione uno...</option>
-
       <option value="Aguascalientes">Aguascalientes</option>
       <option value="Baja California">Baja California</option>
       <option value="Baja California Sur">Baja California Sur</option>
