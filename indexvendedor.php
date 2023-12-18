@@ -16,12 +16,14 @@
     <?php include("header.php"); ?>
     <div id="contenedor-admin">
         <?php include("contenedor-menu.php"); ?>
+        ?>
 
         <div class="contenedor-principal">
             <div id="dashboard">
                 <h2>Panel de vendedor</h2>
                 <hr>
                 <div class="contenedor-cajas-info">
+                    <h1>Bienvenido Vendedor </h1>
             
 
     <script>

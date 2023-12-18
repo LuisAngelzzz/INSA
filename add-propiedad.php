@@ -3,7 +3,7 @@
 /********************************************************/
 //SELECCIONAMOS LOS TIPOS DE PROPIEDADES
 //nos conectamos a la base de datos
-include("conexion.php");
+include("conex.php");
 
 //Armamos el query para seleccionar los tipos
 $query = "SELECT * FROM tipos";
@@ -15,7 +15,7 @@ $resultado_tipos = mysqli_query($conn, $query);
 /********************************************************/
 
 //nos conectamos a la base de datos
-include("conexion.php");
+include("conex.php");
 
 //Armamos el query para seleccionar los paises
 $query = "SELECT * FROM paises";
@@ -29,7 +29,7 @@ $resultado_paises = mysqli_query($conn, $query);
 //GUARDAMOS LA PROPIEDAD
 if (isset($_POST['agregar'])) {
     //nos conectamos a la base de datos
-    include("conexion.php");
+    include("conex.php");
 
     //tomamos los datos que vienen del formulario
     $titulo = $_POST['titulo'];
@@ -184,22 +184,16 @@ if (isset($_POST['agregar'])) {
 
                     <div>
                         <h2>Galería de fotos</h2>
-
                         <label for="foto1" class="btn-fotos"> Foto Principal</label>
                         <output id="list" class="contenedor-foto-principal">
-                            <img src="<?php echo $propiedad['url_foto_principal'] ?>" alt="">
+                            <img src="<?php  echo $propiedad['url_foto_principal'] ?>" alt="">
                         </output>
                         <input type="file" id="foto1" accept="image/*" name="foto1" style="display:none">
                     </div>
-
                     <div>
                         <label for="fotos" class="btn-fotos"> Galería de Fotos </label>
-
                         <div id="contenedor-fotos-publicacion">
-
                         </div>
-
-
                         <input type="file" id="fotos" accept="image/*" name="fotos[]" value="Foto" multiple="" required style="display:none">
                     </div>
 
