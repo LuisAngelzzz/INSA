@@ -19,6 +19,27 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
+<?php
+
+
+include('conex.php');
+
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";
+    $result = mysqli_query($conectar, $query);
+
+    if (mysqli_num_rows($result) == 1) {
+        // Inicio de sesión exitoso
+        header('Location: inicio_exitoso.php');
+    } else {
+        // Error de inicio de sesión
+        echo "Credenciales incorrectas. Inténtalo de nuevo.";
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +65,8 @@ if (isset($_POST['login'])) {
     <div class="section-header">
       <div class="containers">
         <h2>Contactanos</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dignissimos eaque doloremque, nulla mollitia facilis temporibus ullam voluptas nostrum consequatur? Fugiat vitae sint quo est eveniet perspiciatis eum asperiores ipsam.</p>
+        <p>En INSA, nos enorgullece darle la bienvenida a un mundo de exclusividad y elegancia en bienes raíces. Somos más que una empresa inmobiliaria; somos su socio confiable en la búsqueda y adquisición de propiedades de alto valor. Nos dedicamos a ofrecer experiencias inigualables, conectando a nuestros clientes con residencias que reflejan su estilo de vida y aspiraciones.</p>
+       <p> Para consultas, no dude en ponerse en contacto con nuestro equipo dedicado. Estamos aquí para convertir sus sueños inmobiliarios en una realidad.</p>
       </div>
     </div>
     
@@ -59,7 +81,8 @@ if (isset($_POST['login'])) {
             
             <div class="contact-info-content">
               <h4>Direccion</h4>
-              <p>56383 Ixtapaluca,<br/> Estado De Mexico, Mexico, <br/>55060</p>
+              <p>El Pueblito, Corregidora,<br/> Qro, <br/>C.P. 76904</p>
+              
             </div>
           </div>
           
@@ -70,7 +93,7 @@ if (isset($_POST['login'])) {
             
             <div class="contact-info-content">
               <h4>Telefono</h4>
-              <p>561-456-2321</p>
+              <p>442 826 9910</p>
             </div>
           </div>
           
@@ -81,7 +104,7 @@ if (isset($_POST['login'])) {
             
             <div class="contact-info-content">
               <h4>Correo Electronico</h4>
-             <p>example@email.com</p>
+             <p>ventas@insainmobiliaria.com</p>
             </div>
           </div>
         </div>
@@ -109,7 +132,7 @@ if (isset($_POST['login'])) {
             </div>
           </form>
         </div>
-        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59747.365145082535!2d-100.41801841310462!3d20.620282274958075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses-419!2smx!4v1701359347536!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>

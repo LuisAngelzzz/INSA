@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   
 </head>
 <body>
     <div class="contenedor-qsomos" data-aos="fade-right">
@@ -22,7 +23,7 @@
         </nav>
         <section>
             <div class="contenedor-tarjeta">
-                <img src="img/q-somos.jpeg" alt="quienes somos">
+                <img src="img/Obra de toma 2.jpg" alt="quienes somos">
 
                 <div class="tarjeta">
                 <h1>¿Quienes somos?</h1>
@@ -47,12 +48,12 @@
                         atavès de la eficiencia operativa, el buen manejo de los recursos y la calidad de nuestros servicios.
                     </p>
                 </div>
-                <img src="img/mision.jpg" alt="quienes somos">
+                <img src="img/Cementos Moctezuma 4.jpg" alt="quienes somos">
                 
             </div>
 
             <div class="contenedor-tarjeta">
-                <img src="img/vision.jpeg" alt="quienes somos">
+                <img src="img/Estacionamiento 1.jpg" alt="quienes somos">
                 <div class="tarjeta">
                     <h1>Valores</h1>
                     <p>Honestidad</p>
@@ -75,8 +76,7 @@
         <section>
             <div class="contenedor-estamos">
             <h1>¿Donde estamos?</h1>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4660414061545!2d-99.1825700259109!3d19.435463540591634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8ad94aba5ab%3A0xd416092c18a9ec2c!2sLeibnitz%20270%2C%20Anzures%2C%20Miguel%20Hidalgo%2C%2011590%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1697585162161!5m2!1ses!2smx" width="600" height="450" style="border: 5px solid #F88E12; border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59747.365145082535!2d-100.41801841310462!3d20.620282274958075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses-419!2smx!4v1701359347536!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
        

@@ -13,13 +13,7 @@
     </div>
   
 
-    <div class="box__footer">
-        <h2>Politicas</h2>
-        <a href="#">Acerca de</a>
-        <a href="#">Aviso de Privacidad</a>
-        <a href="#">leyes</a>
-        <a href="#">Servicios</a>              
-    </div>
+    
 
     <div class="box__footer">
         <h2>Redes Sociales</h2>
