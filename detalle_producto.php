@@ -23,6 +23,7 @@ mysqli_close($conn);
 <head>
    <link rel="stylesheet" type="text/css" href="css/style.css">
    <link rel="stylesheet" type="text/css" href="css/styless.css">
+<link rel="stylesheet" type="text/css" href="css/Footer.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <style>
@@ -197,16 +198,45 @@ mysqli_close($conn);
 <a class="detalletext" style="display: inline;">Baños:</a>
 <p style="display: inline;"><?php echo $detalles_producto['banios']; ?></p>
         <!-- Agrega más campos según sea necesario -->     
-    
+    <center> <p style="color: #fff !important; font-size: 28px;">Ubicación</p> 
+ <a style="color: #002587 !important;"><?php echo $producto_detalle['link_u']; ?></a>
+ </center>
     </div> 
             </div>
           
         </div>
+ <div class="container__footer">
+    <div class="box__footer">
+        <div class="logo">
+            <img src="img/LOGO_INSA.png" alt="">
+        </div>
+        <div class="terms">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente deserunt.</p>
+        </div>
+    </div>
+  
 
-<footer>
-        <?php include('footer.php'); ?>
-    </footer>
-    </div>   
+    <div class="box__footer">
+        <h2>Politicas</h2>
+        <a href="#">Acerca de</a>
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">leyes</a>
+        <a href="#">Servicios</a>              
+    </div>
+
+    <div class="box__footer">
+        <h2>Redes Sociales</h2>
+        <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+        <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+        <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
+    </div>
+</div>
+
+<div class="box__copyright">
+    <hr>
+    <p>Todos los derechos reservados © 2023 <b></b></p>
+</div>    </div>   
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
