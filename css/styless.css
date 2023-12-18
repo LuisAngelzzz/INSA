@@ -86,8 +86,8 @@ padding: 2.5%;
 
 .detalles2 {
     background-color: #fab059;
-    height: 700px;
-    width: 80%;
+    height: 1000px;
+    width: 85%;
     color: black;
     font-family: 'Merriweather', serif;
 }
@@ -155,12 +155,13 @@ padding: 2.5%;
     height: 70px;
     background-color: #fab059;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     
 }
 
 iframe {
-    width: 80px; /* Ocupa el 100% del ancho del contenedor */
-    height: 300px; /* Establece la altura del iframe */
+    width: 90%; /* Ocupa el 100% del ancho del contenedor */
+    max-height: 300px;
     border: #fab059; /* Elimina el borde del iframe, si lo deseas */
+    
 }

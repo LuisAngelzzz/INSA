@@ -24,7 +24,6 @@ body {
  .container{
      width: 300%;
      min-height: 105vh;
-     background-image: linear-gradient(rgba(76, 109, 201, 0.65),rgba(175, 173, 189, 0.65));
      background-size: cover;
      background-position: center;
      padding: 0px 8%;
@@ -223,31 +222,28 @@ body {
  
  
  .ventana-emergente {
-     display: none;
-     position: fixed;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     background-image: url('../img/estiloC.png'); 
-     background-color: #fab059;
-     background-size: cover;   
-     padding: 20px;
-     border-radius: 15px; /* Añadimos bordes redondeados */
-     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-     z-index: 999;
- }
- 
- 
- .contenido-ventana {
-     text-align: center;
-     color: white; /* Cambiamos el color del texto para que sea visible sobre el fondo semi-transparente */
- }
- 
- .ventana-emergente {
-     /* ... tus estilos existentes ... */
-     position: absolute; /* Cambia de fixed a absolute */
-     transition: all 0.3s ease;
- 
- }
- 
- 
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fab059;
+    background-size: cover;   
+    padding: 20px;
+    border-radius: 15px; /* Añadimos bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+.contenido-ventana {
+    text-align: center;
+    color: white; /* Cambiamos el color del texto para que sea visible sobre el fondo semi-transparente */
+}
+
+.ventana-emergente {
+    /* ... tus estilos existentes ... */
+    position: absolute; /* Cambia de fixed a absolute */
+    transition: all 0.3s ease;
+
+}
