@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
 .textoproducto {
 
 font-size: 60px;
-font-style: oblique;
+font-family: 'Merriweather', serif;
 font-weight: bold;
-color: #002587 !important;
+color: black !important;
 justify-content: center;
-padding: 2%;
+padding: 2.5%;
 }
 
 .detalles {
@@ -13,6 +15,7 @@ padding: 2%;
     grid-template-columns: 1fr 0.6fr;
     height: 100%;
 }
+
 
 .detalles1,.detalles2 {
     flex: 1; /* Que cada elemento ocupe la mitad del espacio disponible */
@@ -37,6 +40,8 @@ padding: 2%;
     font-size: 24px;
     gap: 15px;
     width: 85%;
+    color: black !important;
+    font-family: 'Merriweather', serif;
 }
 .pnglogos {
     width: 8%;
@@ -53,11 +58,23 @@ padding: 2%;
     justify-content: space-between;
     align-items: center;
     margin-inline-start: 6%;
+    color: black !important;
+    font-family: 'Merriweather', serif;
 }
-
 .txtrenta{
     margin-left: 3%;
+    font-style: oblique
 }
+
+.contac1 {
+    padding-left: 30px;
+}
+
+#miInput::placeholder {
+    text-align: left !important;
+  }
+  
+
 .buttondepa {
         background-color: #0c1774;
         color: white;
@@ -69,9 +86,10 @@ padding: 2%;
 
 .detalles2 {
     background-color: #fab059;
-    height: 700px;
-    width: 80%;
-
+    height: 1000px;
+    width: 85%;
+    color: black;
+    font-family: 'Merriweather', serif;
 }
 
 .imgredes {
@@ -92,24 +110,26 @@ padding: 2%;
 
 .caracter {
     font-weight: bold;
-    font-size: 40px;
-    color: #002587 !important;
+    font-size: 32px;
+    color: black !important;
     padding: 5%;
     height: 100%;
+    font-family: 'Merriweather', serif;
 }
 
 .textcaracter {
     font-size: 21px;
     width: 65%;
-margin-inline-start: 2%;
-
+    margin-inline-start: 2%;
+    color: black !important;
+    font-family: 'Merriweather', serif;
 }
 
 .detalletext {
     font-size: 20px;
     font-weight: bold;
     margin-inline-start: 8%;
-    color: #002587;
+    color: black !important;
     
 }
 
@@ -118,6 +138,7 @@ margin-inline-start: 2%;
     width: 450px;
     height: 60px;
     right: 3%;
+    background-color: white;
   }
 
 
@@ -126,5 +147,21 @@ margin-inline-start: 2%;
     width: 120px;
     height: 70px;
     border-radius: 5px; /* Agrega bordes redondeados a las imágenes */
+
     }
 
+.resultadou {
+    width: 39px;
+    height: 70px;
+    background-color: #fab059;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+iframe {
+    width: 90%; /* Ocupa el 100% del ancho del contenedor */
+    max-height: 300px;
+    border: #fab059; /* Elimina el borde del iframe, si lo deseas */
+    
+}

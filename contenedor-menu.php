@@ -3,7 +3,7 @@
     <nav>
         <ul>
             <li id="link-dashboard">
-                <a href="index.php">
+                <a href="indexvendedor.php">
                     <i class="fa-solid fa-user"></i>
                     Dashboard
                 </a>
@@ -21,29 +21,6 @@
                 <a href="listado-propiedades.php">
                     <i class="fa-solid fa-list"></i>
                     Listado de Propiedades
-                </a>
-            </li>
-
-            
-
-        
-
-            
-
-            <hr>
-            <li id="link-configuracion">
-
-                <a href="configuracion.php">
-                <i class="fa-solid fa-gear"></i>
-                    Configuracion
-                </a>
-            </li>
-
-            <hr>
-            <li id="link-ver-sitio">
-                <a href="" target="_blank">
-                <i class="fa-solid fa-earth-africa"></i>
-                    Ver Sitio Web
                 </a>
             </li>
 

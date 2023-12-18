@@ -5,21 +5,21 @@ $productos = []; // Un array para almacenar los resultados
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $busqueda = isset($_POST['busqueda']) ? $_POST['busqueda'] : '';
-    $venta = isset($_POST['tipoperacion']) ? $_POST['tipoperacion'] : '';
-    $ubicacion = isset($_POST['ubicacion']) ? $_POST['ubicacion'] : '';
+    $venta = isset($_POST['tipo']) ? $_POST['tipo'] : '';
+    $ubicacion = isset($_POST['estado']) ? $_POST['estado'] : '';
     $precio = isset($_POST['precio']) ? $_POST['precio'] : 50;
     $orden = isset($_POST['orden']) ? $_POST['orden'] : 'mas_caro';
 
     // Construir la consulta SQL según los filtros seleccionados
-    $sql = "SELECT * FROM productos ";
-    $sql .= "WHERE ubicacion LIKE '%$busqueda%' ";
+    $sql = "SELECT * FROM propiedades ";
+    $sql .= "WHERE ubicacion LIKE '%$busqueda%' AND activo = 1 ";
 
     if ($venta != '') {
-        $sql .= "AND tipoperacion = '$venta' ";
+        $sql .= "AND tipo = '$venta' ";
     }
 
     if ($ubicacion != '') {
-        $sql .= "AND ubicacion = '$ubicacion' ";
+        $sql .= "AND estado = '$ubicacion' ";
     }
 
     if ($orden == 'Más caro') {
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <title>Catalogo principal</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/styleFooter.css">
+    <link rel="stylesheet" type="text/css" href="css/Footer.css">
     <link rel="stylesheet" type="text/css" href="css/content.css">
     <style>
         /* Agrega aquí tus estilos personalizados */
@@ -62,12 +62,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <nav>
         <img src="img/LOGO_INSA.png" class="logo">
         <ul>
-            <li><a href="index.php">Inicio</a></li>
-            <li><a href="index.php">compra</a></li>
-            <li><a href="index.php">renta</a></li>
-            <li><a href="index.php">conocenos</a></li>
+        <li><a href="index.php" style="color: black;">Inicio</a></li>
+            <li><a href="index.php" style="color: black;">compra</a></li>
+            <li><a href="index.php" style="color: black;">renta</a></li>
+            <li><a href="index.php" style="color: black;">conocenos</a></li>
         </ul>
-        <button class="btn"><img src="img/icon.png">Contactanos</button>
+        <button class="btn">Contactanos</button>
     </nav>
 
     <center>
@@ -83,8 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="container3">
-            <p for="tipoperacion">Venta:</p>
-            <select name="tipoperacion" id="tipoperacion">
+            <p for="tipo">Venta:</p>
+            <select name="tipo" id="tipo">
                 <?php if($venta != ''){ ?>
                 <option value="<?php echo $venta; ?>"><?php echo $venta; ?></option>
                 <?php } ?>
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
 
             <p for="ubicacion">Ubicación:</p>
-            <select name="ubicacion" id="ubicacion">
+            <select name="estado" id="estado">
                 <?php if($ubicacion != ''){ ?>
                 <option value="<?php echo $ubicacion; ?>"><?php echo $ubicacion; ?></option>
                 <?php } ?>
@@ -156,12 +156,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($contador % 3 == 0) {
                     echo '<div class="row">';
                 }
-                echo '<div class="producto" data-habitacion-piso="' . $producto['habitacion_piso'] . '" data-ubicacion="' . $producto['ubicacion'] . '" data-caracteristicas="' . $producto['caracteristicas'] . '">';
+                echo '<div class="producto" data-habitaciones="' . $producto['habitaciones'] . '" data-estado="' . $producto['estado'] . '" data-descripcion="' . $producto['descripcion'] . '">';
                 echo '<a href="detalle_producto.php?id=' . $producto['id'] . '">';
-                echo '<img src="' . $producto['imagen'] . '" alt="Imagen del producto">';
-                echo '<h3>' . $producto['nombre'] . '</h3>';
-                echo '<h3>' . $producto['ubicacion'] . '</h3>';
-                echo '<h3>Precio: $' . $producto['precio'] . '</h3>';
+                echo '<img src="' . $producto['url_foto_principal'] . '" alt="Imagen del producto">';
+                echo '<h3>' . $producto['titulo'] . '</h3>';
+                echo '<a>' . $producto['estado'] . '</a>';
+                echo '<p style="color: #darkblue";>' . $producto['precio'] . '$</p>';
                 echo '</a>';
                 echo '</div>';
                 $contador++;
@@ -179,9 +179,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p id="infoVentana"></p>
         </div>
     </div>
-<footer>
-    <?php include('footer.php'); ?>
-</footer>
+<div class="container__footer">
+    <div class="box__footer">
+        <div class="logo">
+            <img src="img/LOGO_INSA.png" alt="">
+        </div>
+        <div class="terms">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente deserunt.</p>
+        </div>
+    </div>
+  
+
+    <div class="box__footer">
+        <h2>Politicas</h2>
+        <a href="#">Acerca de</a>
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">leyes</a>
+        <a href="#">Servicios</a>              
+    </div>
+
+    <div class="box__footer">
+        <h2>Redes Sociales</h2>
+        <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+        <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+        <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
+    </div>
+</div>
+
+<div class="box__copyright">
+    <hr>
+    <p>Todos los derechos reservados © 2023 <b></b></p>
+</div>>
 </div>
 
 <script>
@@ -202,11 +231,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     productos.forEach(function(producto) {
         producto.addEventListener('mouseenter', function(event) {
-            var habitacionPiso = this.getAttribute('data-habitacion-piso');
+            var habitacionPiso = this.getAttribute('data-habitaciones');
             var ubicacion = this.getAttribute('data-ubicacion');
             var caracteristicas = this.getAttribute('data-caracteristicas');
 
-            var info = 'Habitación-Piso: ' + habitacionPiso + '\nUbicación: ' + ubicacion;
+            var info = 'habitaciones: ' + habitacionPiso + '\nUbicación: ' + ubicacion;
 
             var rect = this.getBoundingClientRect();
             var x = rect.left + window.scrollX;

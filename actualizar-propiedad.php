@@ -1,13 +1,10 @@
 <?php
-
-
-
 //funcion que me perimete obtener una propiedad por id
 
 function obtenerPropiedadPorId($id_propiedad)
 {
     //Obtenemos la propiedad en base al id que recibimos por GET
-    include("conexion.php");
+    include("conex.php");
 
     //Armamos el query para seleccionar la propiedad
     $query = "SELECT * FROM propiedades WHERE id='$id_propiedad'";
@@ -25,7 +22,7 @@ $propiedad = obtenerPropiedadPorId($id_propiedad);
 
 function obtenerFotosGaleriaDePropiedad($id_propiedad)
 {
-    include("conexion.php");
+    include("conex.php");
 
     //Armamos el query para seleccionar las fotos
     $query = "SELECT * FROM fotos WHERE id_propiedad='$id_propiedad'";
@@ -38,10 +35,10 @@ function obtenerFotosGaleriaDePropiedad($id_propiedad)
 /********************************************************/
 //SELECCIONAMOS LOS TIPOS DE PROPIEDADES
 //nos conectamos a la base de datos
-include("conexion.php");
+include("conex.php");
 
 //Armamos el query para seleccionar los tipos
-$query = "SELECT * FROM tipos";
+$query = "SELECT tipo FROM pripiedades";
 
 //Ejecutamos la consulta
 $resultado_tipos = mysqli_query($conn, $query);
@@ -50,10 +47,10 @@ $resultado_tipos = mysqli_query($conn, $query);
 /********************************************************/
 //SELECCIONAMOS LOS PAISES
 //nos conectamos a la base de datos
-include("conexion.php");
+include("conex.php");
 
 //Armamos el query para seleccionar los paises
-$query = "SELECT * FROM paises";
+$query = "SELECT estado FROM propiedades";
 
 //Ejecutamos la consulta
 $resultado_paises = mysqli_query($conn, $query);
@@ -62,10 +59,10 @@ $resultado_paises = mysqli_query($conn, $query);
 /********************************************************/
 //SELECCIONAMOS LAS CIUDADES
 //nos conectamos a la base de datos
-include("conexion.php");
+include("conex.php");
 
 //Armamos el query para seleccionar los paises
-$query = "SELECT * FROM ciudades WHERE id_pais='$propiedad[pais]'";
+$query = "SELECT estado FROM propiedades WHERE id_pais='$propiedad[pais]'";
 
 //Ejecutamos la consulta
 $resultado_ciudades = mysqli_query($conn, $query);
@@ -76,13 +73,13 @@ $resultado_ciudades = mysqli_query($conn, $query);
 //GUARDAMOS LA PROPIEDAD
 if (isset($_POST['actualizar'])) {
     //nos conectamos a la base de datos
-    include("conexion.php");
+    include("conex.php");
 
     //tomamos los datos que vienen del formulario
     $id_propiedad = $_POST['id'];
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
-    $estado = $_POST['estado'];
+    $estado = $_POST['tipo'];
     $ubicacion = $_POST['ubicacion'];
     $habitaciones = $_POST['habitaciones'];
     $banios = $_POST['banios'];
@@ -90,9 +87,8 @@ if (isset($_POST['actualizar'])) {
     $garage = $_POST['garage'];
     $dimensiones = $_POST['dimensiones'];
     $precio = $_POST['precio'];
-    $moneda = $_POST['moneda'];
     $url_galeria = "url";
-    $pais = $_POST['pais'];
+    $pais = $_POST['estado'];
     $propietario = $_POST['nombre_propietario'];
     $telefono_propietario = $_POST['telefono_propietario'];
 
@@ -102,7 +98,7 @@ if (isset($_POST['actualizar'])) {
     $query = "UPDATE propiedades SET
      titulo='$titulo', 
      descripcion='$descripcion', 
-     estado='$estado', 
+     tipo='$estado', 
      ubicacion='$ubicacion', 
      habitaciones='$habitaciones', 
      banios='$banios', 
@@ -110,8 +106,7 @@ if (isset($_POST['actualizar'])) {
      garage='$garage', 
      dimensiones='$dimensiones', 
      precio='$precio',
-     moneda='$moneda', 
-     pais='$pais',
+     estado='$pais',
      propietario='$propietario',
      telefono_propietario='$telefono_propietario'
      WHERE id='$id_propiedad'";
@@ -215,12 +210,12 @@ if (isset($_POST['actualizar'])) {
 
 
                         <div class="box">
-                            <label for="estado">Elija estado de la propiedad</label>
-                            <select name="estado" id="" class="input-entrada-texto">
-                                <option value="venta" <?php if ($propiedad['estado'] == "Venta") {
+                            <label for="tipo">Elija el tipo de la propiedad</label>
+                            <select name="tipo" id="" class="input-entrada-texto">
+                                <option value="venta" <?php if ($propiedad['tipo'] == "Venta") {
                                                             echo "selected";
                                                         } ?>>Venta</option>
-                                <option value="Alquiler" <?php if ($propiedad['estado'] == "Alquiler") {
+                                <option value="renta" <?php if ($propiedad['tipo'] == "renta") {
                                                                 echo "selected";
                                                             } ?>>Renta</option>
                             </select>
@@ -276,13 +271,6 @@ if (isset($_POST['actualizar'])) {
                         </div>
                     </div>
 
-                    <div class="fila">
-                        <div class="box">
-                            <label for="moneda">Moneda</label>
-                            <input type="text" name="moneda" class="input-entrada-texto" required value="<?php echo $propiedad['moneda'] ?>">
-                        </div>
-                    </div>
-
                     <h2>Galería de Fotos</h2>
                     <div class="">
                         
@@ -326,12 +314,9 @@ if (isset($_POST['actualizar'])) {
 
                     <div class="fila">
                         <div class="box">
-                            <label for="pais">Estado de la Propiedad</label>
-                            <select name="pais" id="" class="input-entrada-texto">
-                            <option value="<?php echo $propiedad['titulo'] ?>"> <?php echo $propiedad['pais'] ?></option>
-                         
-                                                      
-
+                            <label for="estado">Estado de la Propiedad</label>
+                            <select name="estado" id="" class="input-entrada-texto">
+                            <option value="<?php echo $propiedad['estado'] ?>"> <?php echo $propiedad['estado'] ?></option>
 <option value="Aguascalientes">Aguascalientes</option>
 <option value="Baja California">Baja California</option>
 <option value="Baja California Sur">Baja California Sur</option>
