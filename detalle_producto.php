@@ -100,23 +100,26 @@ mysqli_close($conn);
 
              </div>    
             </div>
+            <form method="POST" class="custom-form contact-form" action="contacto-guardar.php" >
             <div class="detalles2">
                 
                <center> <p class="depatext" style="font-weight: bold; font-size: 30px;">Contactanos</p> </center>
                 
                <div class="contac1">
                 <p class="depatext1">Nombre completo</p>
-                <input type="text" id="miInput" name="miInput" placeholder="Tu nombre completo">
+                <input type="text" name="nombre_completo" id="nombre_completo" class="form-control" placeholder="Escribe tu nombre" required>
+
                 <p class="depatext1">Numero de télefono</p>
-                <input type="text" id="miInput" name="miInput" style="width: 40% !important; text-align: right;" placeholder="Numero de telefono">
+                <input type="text" name="numero_telefono" id="numero_telefono" class="form-control" placeholder="Escribe tu telefono" required>
 
                 <p class="depatext1">E-mail</p>
-                <input type="text" id="miInput" name="miInput" placeholder="Tu Email">
+                <input type="text" name="correo_electronico" id="correo_electronico" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Escribe tu correo electronico" required>
                 <br><br>
                 <input type="checkbox" name="tarea1"> Acepto el tratamiento de datos<br> ㅤ personales
                 <br><br>
                 </div>
-                <center><button class="miboton" style="width: 80%;">Send Message</button></center>
+                <input type="hidden" name="titulo_producto" value="<?php echo $producto_detalle['titulo']; ?>">
+                <center><button class="miboton" style="width: 80%;">Enviar Mensaje</button></center>
 <center><p class="depatext" style="font-weight: bold; font-size: 26px;">Redes Sociales</p>
 </center>
 <center><img src="img/twitter.png" class="imgredes">
