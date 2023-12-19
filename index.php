@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pantalla principal</title>
     <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/Footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="container" data-aos="fade-right">
@@ -14,229 +16,58 @@
             <img src="img/LOGO_INSA.png" class="logo">
             <ul>
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Comprar</a></li>
-                <li><a href="#">Rentar</a></li>
                 <li><a href="quienes-somos.php">Conocenos</a></li>
                 <li><a href="login.php">Iniciar Sesion</a></li>
             </ul>
-            <button class="btn"><a href="contactanos.php">Contactanos</button>
+           <a href="tu_enlace_aqui" class="submit"><button class="btn">Contactanos</button></a>
+
         </nav>
         <div class="content">
             <h1>Vida<br> moderna para todos</h1>
             <p>Brindamos un servicio completo para la venta, compra o alquiler de bienes inmuebles.
                 Llevamos mas de 15 años en el mercado.
             </p>
-                 <form>
-                    <input type="text" placeholder="📍 Ubicacion">
-                    <button type="submit" class="btn">Buscar</button>
+               <br><br>
+                   
+<a href="filter.php" class="submit"><button class="btn">Ver Catalogo</button></a>
 
-                 </form>
+
         </div>
     </div>
 
-    <div class="container-ofertas">
-    <div class="content-ofers">
-            <h2>Mejores Ofertas</h2>
-            <p>Cumple tus sueños profesionales, disfruta al maximo de todos tus logros<br>
-            del centro de la ciudad y de las viviendas de lujo
-            </p>
-            <a href="filter.php" class="mostrar">Mostrar todo</a>
-            <div class="progress-bar">
-  <div class="progress-fill"></div>
-</div>
-
-
-    </div>
-    <br>
-    <div class="button-container">
-    <button class="carousel-button prev" onclick="scrollCarousel(-1)"> &#10094;</button>
-    <button class="carousel-button next" onclick="scrollCarousel(1)"> &#10095; </button>
  
-  </div>
-  <br><br> 
-
-<div class="carousel-container">
-
-    
-<div class="carousel">
-    <div class="carousel-item">
-       <div class="card">
-    
-       <a href="tu_url_destino.html" class="boton-enlace">
-      <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-         <div class="card-content">
-         <h3>Amplio apartamento de 4 habitaciones
-        con un hermoso<br> jardin y estacionamiento</h3>
-       <h3 class="price" style="color:#005bad">$300,000.00</h3>
-      <p>CDMX</p>
-         </div>
-       </div>
-    </div>
-    <!-- Repetir este div para cada tarjeta del carrusel -->
-    <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-2.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-          <h3>Casa con alberca,pequeña terraza<br> 
-          y area de descanso</h3>
-       <h3 class="price" style="color:#005bad">$600,000.00</h3>
-      <p>Guerrero</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-3.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-          <h3>Casa de dos torres,con terminados<br> 
-          marmol</h3>
-       <h3 class="price" style="color:#005bad">$200,100.00</h3>
-      <p>Edo.Mex</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-4.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-          <h3>Casa para descanso con amplio Jardin<br> 
-          cuenta con atico</h3>
-       <h3 class="price" style="color:#005bad">$500,100.00</h3>
-      <p>Toluca</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-5.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-        
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-        
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-        
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-        
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-        
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-        
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-        
-     <div class="carousel-item">
-        <div class="card">
-        <a href="tu_url_destino.html" class="boton-enlace">
-          <img src="img/casa-1.jpg" alt="Titulo de la tarjeta">
-        </a>
-          <div class="card-content">
-            <h2>Titulo de la tarjeta</h2>
-            <p>Descripción de la tarjeta</p>
-          </div>
-        </div>
-     </div>
-     <!-- Repetir este div para cada tarjeta del carrusel -->
-
-        
-
-        
-   </div>
 </div>
+<div class="container__footer">
+    <div class="box__footer">
+        <div class="logo">
+            <img src="img/LOGO_INSA.png" alt="">
+        </div>
+        
+    </div>
+  
+
+   
+
+    <div class="box__footer2">
+        <h2>Redes Sociales</h2>
+        <a href="url_de_fb" target="_blank">
+
+<a href="https://www.linkedin.com/company/insamexico/?viewAsMember=true" target="_blank">
+    <img src="img/link.png" class="fab fa-instagram-square" style="width: 45px; height: 40px; margin: 4%;">
+</a>
+
+<a href="https://www.instagram.com/insa_qro/" target="_blank">
+    <img src="img/ig.png" class="fab fa-instagram-square" style="width: 45px; height: 40px; margin: 4%;">
+</a>
+
+        
+
+    </div>
+</div>
+
+<div class="box__copyright">
+    <hr>
+    <p>Todos los derechos reservados © 2023 <b></b></p>
 </div>
 <br><br>
 
@@ -269,8 +100,6 @@ function scrollCarousel(direction) {
 </script>
 
 </body>
-<footer>
-        <?php include('footer.php'); ?>
-    </footer>
+
     
 </html>

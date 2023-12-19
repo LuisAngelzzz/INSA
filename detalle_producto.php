@@ -169,17 +169,20 @@ mysqli_close($conn);
                 <p class="depatext1">Correo electronico</p>
                 <input type="text" name="correo_electronico" id="correo_electronico" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Escribe tu correo electronico" required>
                 <br><br>
+                <!--
                 <input type="checkbox" name="tarea1"> Acepto el tratamiento de datos<br> ㅤ personales
-                <br><br>
+                <br><br> -->
                 </div>
                 <input type="hidden" name="titulo_producto" value="<?php echo $producto_detalle['titulo']; ?>">
                 <center><button class="miboton" style="width: 80%;">Enviar Mensaje</button></center>
+                <!--
 <center><p class="depatext" style="font-weight: bold; font-size: 26px;">Redes Sociales</p>
 </center>
 <center><img src="img/twitter.png" class="imgredes">
 <img src="img/fb.png" class="imgredes">
 <img src="img/ig.png" class="imgredes">
 <img src="img/wp.png" class="imgredes"></center>
+                -->
             </div>
          
         </div><br>
@@ -274,8 +277,6 @@ mysqli_close($conn);
     </div>
     <div class="box__footer">
         <h2>Redes Sociales</h2>
-        <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
-        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
         <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
         <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
     </div>

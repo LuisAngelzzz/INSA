@@ -21,7 +21,6 @@ padding: 2.5%;
     flex: 1; /* Que cada elemento ocupe la mitad del espacio disponible */
     padding: 10px; /* Espaciado opcional para separar los elementos */
     box-sizing: border-box; /* Incluir el relleno en el tamaño total del elemento */
-    
 }
 
 .previstaimg {
