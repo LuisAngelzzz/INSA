@@ -62,7 +62,7 @@ $resultado_paises = mysqli_query($conn, $query);
 include("conex.php");
 
 //Armamos el query para seleccionar los paises
-$query = "SELECT estado FROM propiedades WHERE id_pais='$propiedad[pais]'";
+$query = "SELECT estado FROM propiedades WHERE id='$propiedad[pais]'";
 
 //Ejecutamos la consulta
 $resultado_ciudades = mysqli_query($conn, $query);

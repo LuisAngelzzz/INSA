@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($orden == 'Más caro') {
-        $sql .= "ORDER BY precio DESC";
+        $sql .= "ORDER BY precio DESC limit 9";
     } elseif ($orden == 'Más barato') {
-        $sql .= "ORDER BY precio asc";
+        $sql .= "ORDER BY precio ASC limit 9";
     }
 
     // Ejecutar la consulta
@@ -79,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form id="formularioBusqueda" method="post">
                 <input type="text" name="busqueda" id="busqueda" placeholder="palabra">
                 <input type="submit" value="Buscar" class="boton-buscar">
-            
         </div>
 
         <div class="container3">
@@ -149,6 +148,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </center>
 
     <center>
+    <style>
+        .container5{
+            margin-bottom: 100px;
+            padding-bottom: 10px;
+        }
+    </style>
         <div class="container5">
             <?php
             $contador = 0;
@@ -179,7 +184,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p id="infoVentana"></p>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <style>
+        .container__footer{
+            margin-top: 100px;
+            padding-top: 10px;
+        }
+    </style>
+    
+    
 <div class="container__footer">
+    
     <div class="box__footer">
         <div class="logo">
             <img src="img/LOGO_INSA.png" alt="">

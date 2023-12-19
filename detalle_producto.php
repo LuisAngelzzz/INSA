@@ -75,7 +75,56 @@ mysqli_close($conn);
             <br><br>    
            
            
-         <center>   <div class="responsive">
+        <center>
+                    <div>
+                      <?php
+                      function obtenerPropiedadPorId($id_propiedad)
+                      {
+                          //Obtenemos la propiedad en base al id que recibimos por GET
+                          include("conex.php");
+                      
+                          //Armamos el query para seleccionar la propiedad
+                          $query = "SELECT * FROM propiedades WHERE id='$id_propiedad'";
+                      
+                          //Ejecutamos la consulta
+                          $resultado_propiedad = mysqli_query($conn, $query);
+                          $propiedad = mysqli_fetch_assoc($resultado_propiedad);
+                          return $propiedad;
+                      }
+                      //tomo el id que me recibí y busco la propiedad
+                      $id_propiedad = $_GET['id'];
+                      $propiedad = obtenerPropiedadPorId($id_propiedad);
+
+                      function obtenerFotosGaleriaDePropiedad($id_propiedad)
+                      {
+                          include("conex.php");
+                      
+                          //Armamos el query para seleccionar las fotos
+                          $query = "SELECT * FROM fotos WHERE id_propiedad='$id_propiedad' limit 3";
+                      
+                          //Ejecutamos la consulta
+                          $galeria = mysqli_query($conn, $query);
+                          return $galeria;
+                      }
+                      ?>
+                        
+                        <input type="hidden" id="fotosAEliminar" name="fotosAEliminar">
+                        <div id="contenedor-fotos-publicacion">
+                            <?php
+                            $galeria = obtenerFotosGaleriaDePropiedad($propiedad['id']);
+                            $i = 1; ?>
+                            <?php while ($foto = mysqli_fetch_assoc($galeria)) : ?>
+                                <output class="contenedor-foto-galeria" id="<?php echo $i ?>">
+                                    <img src="fotos/<?php echo $propiedad['id'] . "/" . $foto['nombre_foto'] ?>" class="foto-galeria" style="width: 250px; height: 150px; border: 2px solid #333; border-radius: 10px; box-shadow: 3px 3px 5px #888888;" >
+                                </output>
+                            <?php
+                                $i++;
+                            endwhile
+                            ?>
+                        </div>
+
+                    </div>
+            <!--<div class="responsive">
     <div><img src="img/ejemplo.jpg" alt="Imagen 1"></div>
     <div><img src="img/ejemplo2.jpg" alt="Imagen 2"></div>
     <div><img src="img/ejemplo3.jpg" alt="Imagen 3"></div>
@@ -84,13 +133,14 @@ mysqli_close($conn);
     <div><img src="img/ejemplo3.jpg" alt="Imagen 6"></div>
     <div><img src="img/ejemplo.jpg" alt="Imagen 7"></div>
     <div><img src="img/ejemplo2.jpg" alt="Imagen 8"></div>
-  </div></center>
+  </div> -->
+        </center>
                 
                 <br> <br>
               <center>  <div class="especificaciones">
-                    <img class="pnglogos" src="img/tipo.png" alt="Estado"><p style="display: inline;"><?php echo $detalles_producto['estado']; ?></p>
-                    <img class="pnglogos" src="img/metro.png" alt="Ubicacion"><p style="display: inline;"><?php echo $detalles_producto['ubicacion']; ?></p>
-                    <img class="pnglogos" src="img/ubica.png" alt="tipo lugar"><p style="display: inline;"><?php echo $detalles_producto['tipo']; ?></p>
+                    <img class="pnglogos" src="img/tipo.png" alt="Estado"><p style="display: inline;"><?php echo $detalles_producto['tipo']; ?></p>
+                    <img class="pnglogos" src="img/metro.png" alt="Ubicacion"><p style="display: inline;"><?php echo $detalles_producto['dimensiones']; ?></p>
+                    <img class="pnglogos" src="img/ubica.png" alt="tipo lugar"><p style="display: inline;"><?php echo $detalles_producto['estado']; ?></p>
 
                 </div></center>
                 <br> <br>
@@ -112,7 +162,7 @@ mysqli_close($conn);
                 <p class="depatext1">Numero de télefono</p>
                 <input type="text" name="numero_telefono" id="numero_telefono" class="form-control" placeholder="Escribe tu telefono" required>
 
-                <p class="depatext1">E-mail</p>
+                <p class="depatext1">Correo electronico</p>
                 <input type="text" name="correo_electronico" id="correo_electronico" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Escribe tu correo electronico" required>
                 <br><br>
                 <input type="checkbox" name="tarea1"> Acepto el tratamiento de datos<br> ㅤ personales
@@ -149,7 +199,7 @@ mysqli_close($conn);
                  <br><br><br>
                 -->
                  <a class="caracter">Localización: </a><br><br>
-                 <a style="color: black;"><?php echo $producto_detalle['estado']; ?></a>  
+                 <a style="color: black;"><?php echo $producto_detalle['ubicacion']; ?></a>  
                  <br><br><br>
                  <!-- Pruebas
                  <a class="caracter">Opinión: </a><br><br>
@@ -164,7 +214,7 @@ mysqli_close($conn);
         <br>
         <a class="caracter" style="font-size: 30px;">Breves Características: </a>
         <br><br>
-        <a class="detalletext" style="display: inline;">Ciudad:</a>
+        <a class="detalletext" style="display: inline;">Estado:</a>
 <p style="display: inline;"><?php echo $detalles_producto['estado']; ?></p>
 <br><br>
 <!-- Pruebas
@@ -214,19 +264,10 @@ mysqli_close($conn);
             <img src="img/LOGO_INSA.png" alt="">
         </div>
         <div class="terms">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente deserunt.</p>
+          <p></p>
+          
         </div>
     </div>
-  
-
-    <div class="box__footer">
-        <h2>Politicas</h2>
-        <a href="#">Acerca de</a>
-        <a href="#">Aviso de Privacidad</a>
-        <a href="#">leyes</a>
-        <a href="#">Servicios</a>              
-    </div>
-
     <div class="box__footer">
         <h2>Redes Sociales</h2>
         <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
@@ -234,6 +275,18 @@ mysqli_close($conn);
         <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
         <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
     </div>
+  
+
+    <div class="box__footer">
+      <!--Pruebas
+        <h2>Politicas</h2>
+        <a href="#">Acerca de</a>
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">leyes</a>
+        <a href="#">Servicios</a>       -->       
+    </div> 
+
+    
 </div>
 
 <div class="box__copyright">

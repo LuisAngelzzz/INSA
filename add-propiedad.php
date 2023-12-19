@@ -47,10 +47,11 @@ if (isset($_POST['agregar'])) {
     $estado = $_POST['estado'];
     $propietario = $_POST['nombre_propietario'];
     $telefono_propietario = $_POST['telefono_propietario'];
+    $link_u = $_POST['link_u'];
 
     //armamos el query para insertar en la tabla propiedades
-    $query = "INSERT INTO propiedades (id, fecha_alta, titulo, descripcion, tipo, ubicacion, habitaciones, banios, pisos, garage, dimensiones, precio,  url_foto_principal, estado, propietario, telefono_propietario, activo)
-    VALUES (NULL,CURRENT_TIMESTAMP, '$titulo', '$descripcion','$tipo','$ubicacion','$habitaciones','$banios','$pisos','$garage','$dimensiones','$precio', '', '$estado','$propietario','$telefono_propietario' , 0)";
+    $query = "INSERT INTO propiedades (id, fecha_alta, titulo, descripcion, tipo, ubicacion, habitaciones, banios, pisos, garage, dimensiones, precio,  url_foto_principal, estado, propietario, telefono_propietario, activo, link_u)
+    VALUES (NULL,CURRENT_TIMESTAMP, '$titulo', '$descripcion','$tipo','$ubicacion','$habitaciones','$banios','$pisos','$garage','$dimensiones','$precio', '', '$estado','$propietario','$telefono_propietario' , 0, '$link_u')";
 
     //insertamos en la tabla propiedades
     if (mysqli_query($conn, $query)) { //Se insertó correctamente
@@ -147,6 +148,11 @@ if (isset($_POST['agregar'])) {
                         <div class="box">
                             <label for="ubicacion">Ubicación</label>
                             <input type="text" name="ubicacion" class="input-entrada-texto">
+                        </div>
+
+                        <div class="box">
+                            <label for="link_u">Link de la ubicación</label>
+                            <input type="text" name="link_u" class="input-entrada-texto">
                         </div>
                     </div>
 
@@ -276,7 +282,7 @@ if (isset($_POST['agregar'])) {
     <?php if (isset($_POST['agregar'])) : ?>
         <script>
             alert("<?php echo $mensaje ?>");
-            window.location.href = 'index.php';
+            window.location.href = 'indexvendedor.php';
         </script>
     <?php endif ?>
 
