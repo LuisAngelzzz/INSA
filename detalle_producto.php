@@ -145,8 +145,12 @@ mysqli_close($conn);
                 </div></center>
                 <br> <br>
              <div class="rentade">
-                <p class="txtrenta">renta desde:<br>$<?php echo $producto_detalle['precio']; ?> $ / mes</p>
-                <button class="miboton" style="width: 25%; height: 60%;">Quiero rentar</button>
+                <p class="txtrenta"><?php if( $propiedad['tipo'] == 'renta'){
+                  echo 'Renta desde: $' . $producto_detalle['precio'] . ' / mes'; }
+                  else {
+                    echo 'Precio total: $' . $producto_detalle['precio'];
+                  }?>
+                  </p>
 
              </div>    
             </div>
