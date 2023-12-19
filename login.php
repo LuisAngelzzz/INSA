@@ -95,7 +95,7 @@ if(isset($_POST['login'])) {
     <nav>
         <img src="img/LOGO_INSA.png" class="logo">
         <ul>
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="index.php" style="color: black;">Inicio</a></li>
         </ul>
         <button class="btn"><img src="img/icon.png">Contactanos</button>
     </nav>

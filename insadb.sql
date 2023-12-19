@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 16-12-2023 a las 23:13:13
+-- Tiempo de generación: 19-12-2023 a las 17:06:35
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.0.26
 
@@ -71,6 +71,28 @@ CREATE TABLE IF NOT EXISTS `configuracion` (
 
 INSERT INTO `configuracion` (`id`, `propiedad1`, `propiedad2`, `propiedad3`, `propiedad4`, `propiedad5`, `propiedad6`, `oficina_central`, `telefono1`, `telefono2`, `email_contacto`, `horarios`, `mapa`, `facebook`, `twitter`, `tipo_visualizacion_propiedades`, `user`, `password`, `email_administrador`) VALUES
 (1, 1, 3, 1, 1, 3, 3, 'Direccion', '5578758354', '3333 333333', 'yadziro7682@gmail.com', 'Angel Rodriguez Leyva 2', 'mapa', 'Angel Rodriguez Leyva 2', 'Angel Rodriguez Leyva 2', 'p', 'admin', '1234', 'admin@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contacto`
+--
+
+DROP TABLE IF EXISTS `contacto`;
+CREATE TABLE IF NOT EXISTS `contacto` (
+  `nombre_completo` text COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `numero_telefono` varchar(20) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `correo_electronico` varchar(45) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `titulo_producto` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `contacto`
+--
+
+INSERT INTO `contacto` (`nombre_completo`, `numero_telefono`, `correo_electronico`, `titulo_producto`) VALUES
+('edna', '245478', 'edna@gmail.com', 'prueba fernandof'),
+('pedro', '245478', 'ALE@gmail.com', 'prueba fernandof');
 
 -- --------------------------------------------------------
 
@@ -166,7 +188,7 @@ DROP TABLE IF EXISTS `productos`;
 CREATE TABLE IF NOT EXISTS `productos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `tipoperacion` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tipoperacion` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
   `habitacion_piso` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ubicacion` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `precio` decimal(10,2) NOT NULL,
@@ -201,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `propiedades` (
   `fecha_alta` date NOT NULL,
   `titulo` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `descripcion` text COLLATE utf8mb4_general_ci NOT NULL,
-  `tipo` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tipo` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
   `ubicacion` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `habitaciones` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
   `banios` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
@@ -210,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `propiedades` (
   `dimensiones` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `precio` int NOT NULL,
   `url_foto_principal` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `estado` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `estado` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
   `ciudad` int NOT NULL,
   `propietario` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `telefono_propietario` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
