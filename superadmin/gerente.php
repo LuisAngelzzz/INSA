@@ -29,7 +29,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="visibility:hidden">
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         
                         <li class="nav-item dropdown notification">
@@ -133,7 +133,7 @@ John Abraham</h5>
         <!-- end navbar -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
-        <!-- left sidebar -->
+          <!-- left sidebar -->
         <!-- ============================================================== -->
       <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
@@ -151,28 +151,28 @@ John Abraham</h5>
                                 <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
+                                       
+                                        
                                         <li class="nav-item">
-                                            <a class="nav-link" href="index.html" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Centro</a>
-                                            <div id="submenu-1-2" class="collapse submenu" style="">
+                                            <a class="nav-link" href="../index.php" data-toggle="" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Log out</a>
+                                            <div id="submenu-1-1" class="" style="">
                                                 <ul class="nav flex-column">
                                                     
                                                 </ul>
                                             </div>
                                         </li>
-                                        
-                                       
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="casas.php" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fab fa-fw fa-wpforms"></i>Propiedades</a>
+                                <a class="nav-link" href="casas.php" data-toggle="" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fab fa-fw fa-wpforms"></i>Propiedades</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         
                                     </ul>
                                 </div>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" style="visibility:hidden">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Catalogos</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -192,7 +192,7 @@ John Abraham</h5>
                                     </ul>
                                 </div>
                             </li>
-                            <li class="nav-item ">
+                            <li class="nav-item " style="visibility:hidden">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Consultas</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -208,7 +208,7 @@ John Abraham</h5>
                                     </ul>
                                 </div>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" style="visibility:hidden">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Operativo</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -229,6 +229,7 @@ John Abraham</h5>
         </div>
         <!-- ============================================================== -->
         <!-- end left sidebar -->
+        <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- wrapper  -->
@@ -351,8 +352,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombreUsuario, email ,activo FROM infousuario where privilegio = 3";
-
+$sql = "SELECT id, nombreUsuario, email ,activo, contraseña FROM infousuario where privilegio = 3";
 
 $result = $conn->query($sql);
 if ($result === false) {
@@ -412,9 +412,62 @@ $(document).ready(function() {
             echo '<td>' . $row["nombreUsuario"] . '</td>';
             echo '<td>' . $row["email"] . '</td>';
             echo '<td><a href="#" class="btn btn-activo ' . (($row["activo"] == 1) ? 'btn-success' : 'btn-danger') . '">' . (($row["activo"] == 1) ? 'Activo' : 'Inactivo') . '</a></td>';
-            echo '<td><i class="fas fa-pencil-alt"></i> Editar</td>';
+            echo '<td><a href="#" onclick="editarUsuario(' . $row["id"] . ', \'' . $row["nombreUsuario"] . '\', \'' . $row["email"] . '\',  \'' . $row["contraseña"] . '\')"><i class="fas fa-pencil-alt"></i> Editar</a></td>';
             echo '</tr>';
         }
+
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.6/dist/sweetalert2.all.min.js"></script>';
+        echo '<script>
+        function editarUsuario(id, nombreUsuario, email, contraseña) {
+            console.log("Función editarUsuario ejecutada con id:", id);
+            Swal.fire({
+                title: "Editar Usuario",
+                html:
+                    "<label for=\'editNombreUsuario\'>Nombre de Usuario:</label>" +
+                    "<input type=\'text\' id=\'editNombreUsuario\' class=\'form-control\' value=\'" + nombreUsuario + "\'>" +
+                    "<label for=\'editEmail\'>Email:</label>" +
+                    "<input type=\'text\' id=\'editEmail\' class=\'form-control\' value=\'" + email + "\'>" +
+                    "<label for=\'editContrasena\'>Contraseña:</label>" +
+                    "<input type=\'password\' id=\'editContrasena\' class=\'form-control\' value=\'" + contraseña + "\'>",
+                focusConfirm: false,
+                preConfirm: () => {
+                    // Obtiene los valores actualizados del formulario dentro de SweetAlert2
+                    var nuevoNombreUsuario = document.getElementById("editNombreUsuario").value;
+                    var nuevoEmail = document.getElementById("editEmail").value;
+                    var nuevaContrasena = document.getElementById("editContrasena").value;
+                    
+    
+                    // Realiza una solicitud AJAX al servidor para actualizar los datos
+                    $.ajax({
+                        type: "POST",
+                        url: "actualizar_usuario.php", // Ruta al script PHP que maneja la actualización
+                        data: {
+                            id: id, // Agrega el parámetro id
+                            nombreUsuario: nuevoNombreUsuario,
+                            email: nuevoEmail,
+                            contraseña: nuevaContrasena,
+                        },
+                        success: function(response) {
+                            // Muestra una alerta con el resultado de la actualización
+                            Swal.fire({
+                                icon: "success",
+                                title: "Guardado Exitoso",
+                                text: response,
+                            });
+                        },
+                        error: function(error) {
+                            // Muestra una alerta en caso de error
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error",
+                                text: "Ocurrió un error al actualizar los datos.",
+                            });
+                        }
+                    });
+                },
+            });
+        }
+    </script>';
 
         echo '</tbody>';
         echo '<tfoot>';
