@@ -6,6 +6,7 @@ $productos = []; // Un array para almacenar los resultados
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $busqueda = isset($_POST['busqueda']) ? $_POST['busqueda'] : '';
     $venta = isset($_POST['tipo']) ? $_POST['tipo'] : '';
+    $banios = isset($_POST['banios']) ? $_POST['banios'] : '';
     $ubicacion = isset($_POST['estado']) ? $_POST['estado'] : '';
     $precio = isset($_POST['precio']) ? $_POST['precio'] : 50;
     $orden = isset($_POST['orden']) ? $_POST['orden'] : 'mas_caro';
@@ -17,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($venta != '') {
         $sql .= "AND tipo = '$venta' ";
     }
-
+    if ($banios != '') {
+        $sql .= "AND banios > '$banios' ";
+    }
     if ($ubicacion != '') {
         $sql .= "AND estado = '$ubicacion' ";
     }
@@ -90,6 +93,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <option value="">Todos</option>
                 <option value="renta">renta</option>
                 <option value="venta">venta</option>
+            </select>
+
+            <p for="banios">Baños:</p>
+            <select name="banios" id="banios">
+                <?php if($banios != ''){ ?>
+                <option value="<?php echo $banios; ?>"><?php echo $banios; ?></option>
+                <?php } ?>
+                <option value="">Todos</option>
+                <option value="1">Mayor a 1</option>
+                <option value="2">2</option>
             </select>
 
             <p for="ubicacion">Ubicación:</p>

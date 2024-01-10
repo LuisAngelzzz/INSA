@@ -56,18 +56,6 @@ $query = "SELECT estado FROM propiedades";
 $resultado_paises = mysqli_query($conn, $query);
 /********************************************************/
 
-/********************************************************/
-//SELECCIONAMOS LAS CIUDADES
-//nos conectamos a la base de datos
-include("conex.php");
-
-//Armamos el query para seleccionar los paises
-$query = "SELECT estado FROM propiedades WHERE id='$propiedad[pais]'";
-
-//Ejecutamos la consulta
-$resultado_ciudades = mysqli_query($conn, $query);
-/********************************************************/
-
 
 /******************************************************* */
 //GUARDAMOS LA PROPIEDAD
@@ -159,29 +147,6 @@ if (isset($_POST['actualizar'])) {
     <link rel="stylesheet" href="superadmin/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="superadmin/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="superadmin/assets/libs/css/style.css">
-    <script>
-        function muestraselect(str) {
-            var conexion;
-
-            if (str == "") {
-                document.getElementById("ciudad").innerHTML = "";
-                return;
-            }
-            if (window.XMLHttpRequest) {
-                conexion = new XMLHttpRequest();
-            }
-
-            conexion.onreadystatechange = function() {
-                if (conexion.readyState == 4 && conexion.status == 200) {
-                    document.getElementById("ciudad").innerHTML = conexion.responseText;
-                }
-            }
-
-            conexion.open("GET", "ciudad.php?c=" + str, true);
-            conexion.send();
-
-        }
-    </script>
 </head>
 
 <body>

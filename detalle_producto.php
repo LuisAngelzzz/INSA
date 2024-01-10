@@ -164,7 +164,7 @@ mysqli_close($conn);
                 <input type="text" name="nombre_completo" id="nombre_completo" class="form-control" placeholder="Escribe tu nombre" required>
 
                 <p class="depatext1">Numero de télefono</p>
-                <input type="text" name="numero_telefono" id="numero_telefono" class="form-control" placeholder="Escribe tu telefono" required>
+                <input type="number"  name="numero_telefono" id="numero_telefono" class="form-control" placeholder="Escribe tu telefono" required>
 
                 <p class="depatext1">Correo electronico</p>
                 <input type="text" name="correo_electronico" id="correo_electronico" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Escribe tu correo electronico" required>
